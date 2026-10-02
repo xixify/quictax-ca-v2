@@ -13,13 +13,825 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-slate-50 font-sans text-slate-900 antialiased selection:bg-sky-500 selection:text-white">
+<body>
 
-  <!-- React Application Root -->
-  <div id="root"></div>
+  <!-- Top Announcement Bar (Navy Header Ticker) -->
+  <div class="top-announcement-bar">
+    <div class="container">
+      <div class="top-bar-flex">
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+          <span className="badge-chip badge-amber" style="background: rgba(245,158,11,0.15); color: #FBBF24; border: 1px solid rgba(245,158,11,0.3); padding: 0.15rem 0.5rem; font-size: 0.7rem;">
+            🏆 CPA Practice Advisor Readers' Choice #2 Award Winner
+          </span>
+          <span style="color: #64748B;">|</span>
+          <span style="color: #34D399; font-weight: 700; display: flex; align-items: center; gap: 0.35rem;">
+            <span class="pulse-green"></span> Tax Specialists Online Now
+          </span>
+          <span style="color: #64748B;">|</span>
+          <span style="color: #E2E8F0;">⏱️ Avg Response: &lt; 15 mins</span>
+          <span style="color: #64748B;">|</span>
+          <span style="color: #E2E8F0;">🛡️ CRA NETFILE & EFILE Certified</span>
+        </div>
+        <div>
+          <span style="color: #94A3B8; margin-right: 0.75rem;">📍 Mississauga, ON (Canada Remote)</span>
+          <a href="tel:+12895275237" style="color: #38BDF8; font-weight: 800; text-decoration: none;">📞 (289) 527-5237</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Vite Module Entry -->
-  <script type="module" src="/src/main.tsx"></script>
+  <!-- Sticky Main Header Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="logo-box">Q</div>
+          <div class="logo-text">
+            Quic<span class="blue">Tax</span><span class="logo-tag">.ca</span>
+          </div>
+        </a>
+
+        <!-- Main Navigation Links with Hover Dropdowns -->
+        <nav class="main-nav">
+          
+          <!-- Products Dropdown -->
+          <div class="nav-item">
+            <button class="nav-link">Products ▼</button>
+            <div class="dropdown-menu">
+              <a href="#pricing" class="dropdown-item">
+                <span class="dropdown-title">Individual PRO Plan ($149/yr)</span>
+                <span class="dropdown-desc">Unlimited 1040/T1 returns, all provinces & CRA NetFile</span>
+              </a>
+              <a href="#pricing" class="dropdown-item">
+                <span class="dropdown-title">Essential SMB Plan ($299/yr)</span>
+                <span class="dropdown-desc">T1 + T2125 Self-Employed + Federal/Provincial Payroll</span>
+              </a>
+              <a href="#pricing" class="dropdown-item">
+                <span class="dropdown-title">Unlimited Firm Plan ($599/yr)</span>
+                <span class="dropdown-desc">T1 + T2 Corporate + Unlimited preparer seats & storage</span>
+              </a>
+              <a href="#comparison" class="dropdown-item" style="border-top: 1px solid #E2E8F0; margin-top: 0.25rem; padding-top: 0.5rem; color: #0284C7; font-weight: 800;">
+                View Feature Comparison Matrix →
+              </a>
+            </div>
+          </div>
+
+          <!-- Features Dropdown -->
+          <div class="nav-item">
+            <button class="nav-link">Features ▼</button>
+            <div class="dropdown-menu">
+              <a href="#features" class="dropdown-item">
+                <span class="dropdown-title">My AI Tax Assistant</span>
+                <span class="dropdown-desc">Automated T4/T5 OCR slip reader & form filler</span>
+              </a>
+              <a href="#features" class="dropdown-item">
+                <span class="dropdown-title">CRA NETFILE Direct Sync</span>
+                <span class="dropdown-desc">Instant CRA submission & confirmation receipt</span>
+              </a>
+              <a href="#features" class="dropdown-item">
+                <span class="dropdown-title">MyTAXPortal (Client Portal)</span>
+                <span class="dropdown-desc">Secure document upload & Form T183 e-signatures</span>
+              </a>
+              <a href="#features" class="dropdown-item">
+                <span class="dropdown-title">Refund Transfer Fast Forward</span>
+                <span class="dropdown-desc">Collect filing fees directly out of tax refund</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="#pricing" class="nav-link">Pricing</a>
+          <a href="#comparison" class="nav-link">Comparison</a>
+          <a href="#" class="nav-link trigger-demo-modal" style="color: #D97706;">Demo Center</a>
+          <a href="cra.html" class="nav-link">CRA Hub</a>
+          <a href="tax-articles.html" class="nav-link">Tax Articles</a>
+          <a href="faq.html" class="nav-link">FAQ</a>
+          <a href="contact.html" class="nav-link">Support</a>
+        </nav>
+
+        <!-- Right Header Action CTAs -->
+        <div class="header-ctas">
+          <button class="btn btn-secondary-white trigger-demo-modal" style="padding: 0.6rem 1.1rem; font-size: 0.8rem;">
+            ▶ TRY IT FOR FREE
+          </button>
+          <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20schedule%20a%20demo%20or%20file%20my%20taxes." target="_blank" class="btn btn-primary-blue" style="padding: 0.6rem 1.1rem; font-size: 0.8rem;">
+            💬 SCHEDULE A DEMO
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section (Clean Light Theme with Interactive Workspace Window) -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Column -->
+          <div class="hero-content">
+            <div>
+              <span class="badge-chip badge-amber">
+                🏆 CPA PRACTICE ADVISOR READERS' CHOICE #2 AWARD WINNER
+              </span>
+            </div>
+
+            <h1 class="hero-title">
+              Cloud-Based Professional Tax Software & Filing for Canadians
+            </h1>
+
+            <p class="hero-subtitle">
+              Unlimited returns, all provinces, CRA direct e-filing, <strong style="color: #0284C7;">My AI Tax Assistant</strong>, client portal, and dedicated support are included starting at clear flat rates with <strong style="color: #059669;">$0 hidden fees</strong>.
+            </p>
+
+            <div class="hero-ctas">
+              <button class="btn btn-primary-blue trigger-demo-modal" style="padding: 0.9rem 1.8rem; font-size: 0.95rem;">
+                ▶ TRY IT FOR FREE
+              </button>
+              <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20schedule%20a%20demo." target="_blank" class="btn btn-secondary-white" style="padding: 0.9rem 1.8rem; font-size: 0.95rem;">
+                💬 SCHEDULE A DEMO
+              </a>
+            </div>
+
+            <!-- Trust Bar -->
+            <div class="hero-trust-bar">
+              <div class="trust-card">
+                <div style="font-size: 1.25rem;">🏆</div>
+                <div>
+                  <div class="trust-card-title">Ranked #2 Tax Software</div>
+                  <div class="trust-card-sub">CPA Practice Advisor Awards 2026</div>
+                </div>
+              </div>
+
+              <div class="trust-card">
+                <div style="font-size: 1.25rem;">⭐</div>
+                <div>
+                  <div class="trust-card-title">Rated 4.8 out of 5</div>
+                  <div class="trust-card-sub">500+ Verified Canadian Reviews</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Product Workspace Preview Window -->
+          <div class="workspace-window">
+            <div class="window-header">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <div class="window-controls">
+                  <div class="dot dot-red"></div>
+                  <div class="dot dot-yellow"></div>
+                  <div class="dot dot-green"></div>
+                </div>
+                <span>QuicTax.ca Enterprise Workspace v2.0</span>
+              </div>
+              <span class="badge-chip badge-emerald" style="background: rgba(16,185,129,0.15); color: #34D399; border: 1px solid rgba(16,185,129,0.3);">
+                ● CRA NETFILE Live
+              </span>
+            </div>
+
+            <!-- Tabs -->
+            <div class="workspace-tabs">
+              <button class="tab-btn workspace-tab active" data-target="panel-ai">✨ My AI Assistant</button>
+              <button class="tab-btn workspace-tab" data-target="panel-netfile">⚡ CRA NETFILE Direct</button>
+              <button class="tab-btn workspace-tab" data-target="panel-refund">💰 Refund Transfer</button>
+              <button class="tab-btn workspace-tab" data-target="panel-portal">👥 Client Portal</button>
+            </div>
+
+            <!-- Tab Content Panels -->
+            <div class="tab-content-body">
+              
+              <!-- Panel 1: AI Assistant -->
+              <div id="panel-ai" class="workspace-panel" style="display: block;">
+                <div style="background: #E0F2FE; border: 1px solid #BAE6FD; padding: 0.85rem 1rem; border-radius: 8px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <strong style="color: #0369A1; font-size: 0.85rem; display: block;">My AI Assistant — Auto Form Extraction</strong>
+                    <span style="color: #0369A1; font-size: 0.75rem;">Upload T4, T5, T3, W-2, or receipts. AI parses slip values into CRA schedules.</span>
+                  </div>
+                  <button id="simulate-ocr-btn" class="btn btn-primary-blue" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Scan Sample Slip</button>
+                </div>
+
+                <div id="ocr-status-text" style="font-size: 0.75rem; color: #64748B; font-weight: 700; margin-bottom: 0.75rem;">
+                  Click "Scan Sample Slip" above to simulate AI OCR slip extraction.
+                </div>
+
+                <table class="ocr-result-table">
+                  <thead>
+                    <tr>
+                      <th>Slip Field Name</th>
+                      <th>Box #</th>
+                      <th>Extracted Value</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="ocr-data-row">
+                      <td><strong>Employment Income (T4)</strong></td>
+                      <td>Box 14</td>
+                      <td><strong style="color: #059669;">$78,450.00</strong></td>
+                      <td><span style="color: #059669; font-weight: 800;">✓ Verified</span></td>
+                    </tr>
+                    <tr class="ocr-data-row">
+                      <td><strong>Income Tax Deducted</strong></td>
+                      <td>Box 22</td>
+                      <td><strong style="color: #0284C7;">$14,210.00</strong></td>
+                      <td><span style="color: #059669; font-weight: 800;">✓ Verified</span></td>
+                    </tr>
+                    <tr class="ocr-data-row">
+                      <td><strong>CPP Contributions</strong></td>
+                      <td>Box 16</td>
+                      <td>$3,754.45</td>
+                      <td><span style="color: #059669; font-weight: 800;">✓ Verified</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Panel 2: CRA NETFILE -->
+              <div id="panel-netfile" class="workspace-panel" style="display: none;">
+                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1rem; border-radius: 8px;">
+                  <strong style="color: #0F172A; font-size: 0.85rem; display: block; margin-bottom: 0.5rem;">CRA Direct Web API Transmission</strong>
+                  <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 1rem;">Direct electronic filing to Canada Revenue Agency with instant confirmation receipt.</p>
+                  <div style="background: #D1FAE5; border: 1px solid #A7F3D0; padding: 0.75rem; border-radius: 6px; color: #065F46; font-size: 0.8rem; font-weight: 700;">
+                    ✓ CRA NETFILE Accepted — Confirmation Code: CRA-T1-2026-984029148A
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel 3: Refund Transfer -->
+              <div id="panel-refund" class="workspace-panel" style="display: none;">
+                <div style="background: #FEF3C7; border: 1px solid #FDE68A; padding: 1rem; border-radius: 8px;">
+                  <strong style="color: #92400E; font-size: 0.85rem; display: block;">Integrated Bank Refund Transfer</strong>
+                  <p style="font-size: 0.8rem; color: #92400E; margin-top: 0.25rem;">Tax preparation fees can be collected directly from the client’s refund. Zero out-of-pocket payment required.</p>
+                </div>
+              </div>
+
+              <!-- Panel 4: Client Portal -->
+              <div id="panel-portal" class="workspace-panel" style="display: none;">
+                <div style="background: #F3E8FF; border: 1px solid #E9D5FF; padding: 1rem; border-radius: 8px;">
+                  <strong style="color: #6B21A8; font-size: 0.85rem; display: block;">MyTAXPortal & Remote E-Signatures</strong>
+                  <p style="font-size: 0.8rem; color: #6B21A8; margin-top: 0.25rem;">Collect Form T183 remote digital signatures and documents securely from smartphone or desktop.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div style="background: #F8FAFC; border-top: 1px solid #E2E8F0; padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem;">
+              <span style="color: #64748B;">Want to see the full platform live?</span>
+              <a href="#" class="trigger-demo-modal" style="color: #0284C7; font-weight: 800;">Launch Full Demo Center →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- "What is QuicTax.ca?" Feature Pillars Grid -->
+    <section class="section-padding" style="background: #FFFFFF; border-bottom: 1px solid #E2E8F0;">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-chip">ALL-IN-ONE CANADIAN TAX SYSTEM</span>
+          <h2 class="section-h2">What is QuicTax.ca?</h2>
+          <p class="section-p">QuicTax.ca is cloud-based professional tax software built for Canadian tax preparers, accountants, freelancers, and taxpayers who would rather buy one complete system than assemble one from add-ons. Accurate, efficient, and affordable.</p>
+        </div>
+
+        <div class="pillars-grid">
+          
+          <!-- Pillar 1 -->
+          <div class="pillar-card">
+            <div class="pillar-icon">📦</div>
+            <h3 class="pillar-title">Everything you need is included in the plan price</h3>
+            <p class="pillar-desc">Unlimited tax prep and CRA e-filing, client portal, My AI Tax Assistant, remote digital signatures, free dedicated support, and 1-on-1 training are included with your plan. Essential and Unlimited plans also include Federal/Provincial After-the-Fact Payroll.</p>
+            <ul class="pillar-list">
+              <li><span style="color: #0284C7;">✓</span> Unlimited T1, T2, & T2125 returns in all Canadian provinces</li>
+              <li><span style="color: #0284C7;">✓</span> Free CRA NETFILE & EFILE submission with instant confirmation</li>
+              <li><span style="color: #0284C7;">✓</span> Zero hidden per-return fees on annual licensing plans</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="pillar-card">
+            <div class="pillar-icon">✨</div>
+            <h3 class="pillar-title">My AI Tax Assistant built into QuicTax.ca</h3>
+            <p class="pillar-desc">Upload T4s, T5s, T3s, W-2s, and receipts. My AI Assistant automatically identifies the tax forms, extracts key slip values with optical character recognition, and prepares it for import into CRA schedules for review.</p>
+            <ul class="pillar-list">
+              <li><span style="color: #F59E0B;">✓</span> Automated OCR document parsing for all standard CRA slips</li>
+              <li><span style="color: #F59E0B;">✓</span> Instant deduction audit scanner to maximize refund eligibility</li>
+              <li><span style="color: #F59E0B;">✓</span> Reduces manual data entry time by up to 80%</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="pillar-card">
+            <div class="pillar-icon">💰</div>
+            <h3 class="pillar-title">Get refunds faster & get paid directly</h3>
+            <p class="pillar-desc">Choose from integrated Canadian bank partners and give clients flexible refund options. Tax preparation fees can be collected directly from the client’s refund so nobody pays upfront out of pocket.</p>
+            <ul class="pillar-list">
+              <li><span style="color: #10B981;">✓</span> Prior Year & Current Year Refund Transfer options</li>
+              <li><span style="color: #10B981;">✓</span> Direct deposit into client bank accounts within 8-10 business days</li>
+              <li><span style="color: #10B981;">✓</span> Automatic prep fee deduction upon CRA release</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="pillar-card">
+            <div class="pillar-icon">🔄</div>
+            <h3 class="pillar-title">Switching is easier than you think with free conversion</h3>
+            <p class="pillar-desc">We convert prior-year returns, client information, schedules, and forms from supported tax software (TurboTax, H&R Block, UFile, TaxCycle, Profile, Cantax) at no extra cost. One-on-one onboarding training included.</p>
+            <ul class="pillar-list">
+              <li><span style="color: #8B5CF6;">✓</span> Free prior-year return data import from major software</li>
+              <li><span style="color: #8B5CF6;">✓</span> Dedicated 1-on-1 Canadian onboarding specialist assigned</li>
+              <li><span style="color: #8B5CF6;">✓</span> Zero downtime during tax season transition</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Awards & Accreditations Showcase -->
+    <section class="awards-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-chip badge-amber">INDUSTRY ACCREDITATION & AWARDS</span>
+          <h2 class="section-h2">Recognized by Tax Professionals & Industry Experts</h2>
+          <p class="section-p">Our commitment to innovation, value, and an exceptional customer experience has earned the recognition of Canadian tax professionals and accounting experts nationwide.</p>
+        </div>
+
+        <div class="award-featured-box">
+          <div>
+            <span class="badge-chip badge-amber" style="margin-bottom: 0.75rem;">CPA Practice Advisor Readers' Choice Awards</span>
+            <h3 style="font-size: 2rem; color: #FFFFFF; font-family: var(--font-heading); margin: 0.5rem 0 0.75rem;">Ranked #2 in Professional Tax Software</h3>
+            <p style="font-size: 0.9rem; color: #CBD5E1; line-height: 1.6;">
+              QuicTax.ca earned over 22.5% of the total vote in the CPA Practice Advisor Readers' Choice Awards for Federal & Provincial Tax Preparation software, outranking traditional legacy desktop software solutions.
+            </p>
+          </div>
+
+          <div class="award-badge-card">
+            <div style="font-size: 2rem;">🏆</div>
+            <div style="font-size: 0.8rem; font-weight: 800; color: #FFFFFF; margin-top: 0.5rem;">READERS' CHOICE</div>
+            <div style="font-size: 1.75rem; font-weight: 900; color: #F59E0B; margin: 0.25rem 0;">RANKED #2</div>
+            <div style="font-size: 0.7rem; color: #94A3B8;">Federal & Provincial Income Tax Prep</div>
+          </div>
+        </div>
+
+        <div class="awards-grid">
+          <div class="award-mini-card">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">👍</div>
+            <strong style="color: #FFFFFF; font-size: 0.85rem; display: block;">Best Customer Support</strong>
+            <span style="color: #94A3B8; font-size: 0.75rem;">&lt; 15 Min Average Hold Time</span>
+          </div>
+
+          <div class="award-mini-card">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🛡️</div>
+            <strong style="color: #FFFFFF; font-size: 0.85rem; display: block;">Best Overall Value</strong>
+            <span style="color: #94A3B8; font-size: 0.75rem;">Flat Annual Rates with $0 Add-ons</span>
+          </div>
+
+          <div class="award-mini-card">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⭐</div>
+            <strong style="color: #FFFFFF; font-size: 0.85rem; display: block;">Top Rated Functionality</strong>
+            <span style="color: #94A3B8; font-size: 0.75rem;">My AI Assistant & EFILE Sync</span>
+          </div>
+
+          <div class="award-mini-card">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🤝</div>
+            <strong style="color: #FFFFFF; font-size: 0.85rem; display: block;">BBB Accredited A+</strong>
+            <span style="color: #94A3B8; font-size: 0.75rem;">Rated 4.85/5 from 355+ Reviews</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flat Pricing Plans & Volume Savings Calculator -->
+    <section id="pricing" class="pricing-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-chip">TRANSPARENT FLAT ANNUAL PRICING</span>
+          <h2 class="section-h2">Choose the Right Plan for Your Business</h2>
+          <p class="section-p">Flat annual plans with unlimited returns, Federal and all provinces, and CRA e-filing included. No surprise per-return fees on annual plans.</p>
+        </div>
+
+        <div class="pricing-grid">
+          
+          <!-- Plan 1: Individual PRO -->
+          <div class="pricing-card">
+            <div>
+              <span class="badge-chip">Individual PRO</span>
+              <p style="font-size: 0.8rem; color: #64748B; margin: 0.5rem 0 1rem;">Solo preparers & individuals filing T1 returns</p>
+              
+              <div>
+                <span class="price-val">$149</span>
+                <span style="color: #64748B; font-weight: 700;">/ year</span>
+                <span style="display: block; font-size: 0.75rem; color: #059669; font-weight: 800; margin-top: 0.25rem;">Tax Year 2026 License Included</span>
+              </div>
+
+              <ul class="pricing-list">
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> <strong>Unlimited T1 returns</strong> in all provinces</li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> Unlimited free CRA NETFILE & EFILE</li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> Prior tax years 2024 & 2025 free</li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> Integrated Bank Refund Transfers</li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> My AI Tax Assistant OCR scanner</li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> Client portal & remote e-signatures</li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> 1 preparer seat + 5 GB document storage</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-secondary-white trigger-demo-modal" style="width: 100%;">Get Started Now</button>
+          </div>
+
+          <!-- Plan 2: Essential (Featured) -->
+          <div class="pricing-card featured">
+            <div class="featured-pill">MOST POPULAR FOR SMBS & FREELANCERS</div>
+            <div>
+              <span class="badge-chip" style="margin-top: 0.5rem;">Essential</span>
+              <p style="font-size: 0.8rem; color: #64748B; margin: 0.5rem 0 1rem;">Offices filing T1s + Business T2125 returns</p>
+              
+              <div>
+                <span class="price-val">$299</span>
+                <span style="color: #64748B; font-weight: 700;">/ year</span>
+                <span style="display: block; font-size: 0.75rem; color: #059669; font-weight: 800; margin-top: 0.25rem;">Tax Year 2026 License Included</span>
+              </div>
+
+              <div style="background: #E0F2FE; color: #0369A1; padding: 0.4rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 900; margin: 1rem 0 0.5rem;">
+                EVERYTHING IN INDIVIDUAL PRO, PLUS:
+              </div>
+
+              <ul class="pricing-list">
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> <strong>T2125 Self-Employed Business Returns</strong></li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> GST/HST Return filing & ITC calculations</li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> Federal & Provincial After-the-Fact Payroll</li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> Specialty returns: 990, 706, & 709</li>
+                <li><span style="color: #0284C7; font-weight: 900;">✓</span> <strong>2 preparer seats</strong> + 10 GB storage</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-primary-blue trigger-demo-modal" style="width: 100%;">Get Started Now</button>
+          </div>
+
+          <!-- Plan 3: Unlimited -->
+          <div class="pricing-card">
+            <div>
+              <span class="badge-chip">Unlimited</span>
+              <p style="font-size: 0.8rem; color: #64748B; margin: 0.5rem 0 1rem;">Growing offices & corporate teams</p>
+              
+              <div>
+                <span class="price-val">$599</span>
+                <span style="color: #64748B; font-weight: 700;">/ year</span>
+                <span style="display: block; font-size: 0.75rem; color: #059669; font-weight: 800; margin-top: 0.25rem;">Tax Year 2026 License Included</span>
+              </div>
+
+              <div style="background: #F3E8FF; color: #7E22CE; padding: 0.4rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 900; margin: 1rem 0 0.5rem;">
+                EVERYTHING IN ESSENTIAL, PLUS:
+              </div>
+
+              <ul class="pricing-list">
+                <li><span style="color: #8B5CF6; font-weight: 900;">✓</span> <strong>Full T2 Corporate Income Tax Returns</strong></li>
+                <li><span style="color: #8B5CF6; font-weight: 900;">✓</span> GIFI Financial Statement integration</li>
+                <li><span style="color: #8B5CF6; font-weight: 900;">✓</span> <strong>Up to 999 preparer seats</strong></li>
+                <li><span style="color: #8B5CF6; font-weight: 900;">✓</span> Unlimited document storage</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-secondary-white trigger-demo-modal" style="width: 100%;">Get Started Now</button>
+          </div>
+
+        </div>
+
+        <!-- Volume Cost Per Return Calculator -->
+        <div class="volume-savings-box">
+          <div>
+            <span class="badge-chip badge-amber" style="margin-bottom: 0.5rem;">VOLUME SAVINGS BREAKDOWN</span>
+            <h3 style="font-size: 1.75rem; color: #FFFFFF; font-family: var(--font-heading); margin-bottom: 0.5rem;">
+              Your Effective Cost Per Return Drops as You Grow
+            </h3>
+            <p style="font-size: 0.85rem; color: #CBD5E1; margin-bottom: 1.25rem;">
+              The annual price doesn't change with volume, so the more returns you file, the less each one costs.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 800;">
+                <span>Simulate Annual Filing Volume:</span>
+                <span id="volume-val-label" style="color: #38BDF8;">150 Returns</span>
+              </div>
+              <input type="range" id="volume-slider" min="50" max="500" step="25" value="150" style="width: 100%; cursor: pointer;">
+            </div>
+          </div>
+
+          <div style="background: #071324; border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 12px; text-align: center;">
+            <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 700; display: block;">Effective Cost Per Return:</span>
+            <div id="cost-per-return-label" style="font-size: 3.25rem; font-weight: 900; color: #34D399; font-family: var(--font-heading); margin: 0.25rem 0;">
+              $0.99
+            </div>
+            <span style="font-size: 0.75rem; color: #CBD5E1;">Based on Individual PRO ($149/yr) plan</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Side-by-Side Comparison Matrix Table -->
+    <section id="comparison" class="comparison-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-chip">TRANSPARENT VALUE COMPARISON</span>
+          <h2 class="section-h2">Comparing Professional Tax Software? Add These Up.</h2>
+          <p class="section-p">With most professional tax software, the advertised license price isn't the total cost: provincial modules, per-return e-filing, client portals, and e-signatures are billed separately. QuicTax.ca includes them.</p>
+        </div>
+
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th style="width: 40%;">Feature & Capability</th>
+                <th class="highlight" style="width: 20%;">QuicTax.ca</th>
+                <th style="width: 20%;">Traditional Legacy Software</th>
+                <th style="width: 20%;">DIY Tax Software & CPA Firms</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Provincial Modules & Returns</strong><br><span style="font-size: 0.75rem; color: #64748B;">All Canadian provinces & territories supported</span></td>
+                <td class="highlight-cell">✓ Included</td>
+                <td>$150 – $350 Extra per province</td>
+                <td>$20 – $40 Extra per state/province</td>
+              </tr>
+              <tr>
+                <td><strong>Federal & Provincial E-Filing</strong><br><span style="font-size: 0.75rem; color: #64748B;">CRA NETFILE & EFILE direct submission</span></td>
+                <td class="highlight-cell">✓ Included (Unlimited)</td>
+                <td>Per-transmission fee billed separately</td>
+                <td>Paid add-on or restricted</td>
+              </tr>
+              <tr>
+                <td><strong>Per-Return Transmission Fees</strong><br><span style="font-size: 0.75rem; color: #64748B;">No volume caps or extra charges per return</span></td>
+                <td class="highlight-cell">✓ None on Annual Plans</td>
+                <td>$5 – $15 per return filed</td>
+                <td>$30 – $90 per return</td>
+              </tr>
+              <tr>
+                <td><strong>MyTAXPortal Client Portal</strong><br><span style="font-size: 0.75rem; color: #64748B;">Secure document locker & client upload</span></td>
+                <td class="highlight-cell">✓ Included</td>
+                <td>$250 – $500/yr Third-Party add-on</td>
+                <td>✕ Not Available</td>
+              </tr>
+              <tr>
+                <td><strong>Remote Digital E-Signatures</strong><br><span style="font-size: 0.75rem; color: #64748B;">Form T183 & client signature collection</span></td>
+                <td class="highlight-cell">✓ Included</td>
+                <td>$2.50 – $5.00 per signature</td>
+                <td>✕ Not Available</td>
+              </tr>
+              <tr>
+                <td><strong>My AI Tax Assistant (OCR Slip Scanner)</strong><br><span style="font-size: 0.75rem; color: #64748B;">Automated T4/T5 form parsing & entry</span></td>
+                <td class="highlight-cell">✓ Included Built-In</td>
+                <td>✕ Not Available</td>
+                <td>✕ Manual Data Entry</td>
+              </tr>
+              <tr>
+                <td><strong>Free Data Conversion & 1-on-1 Training</strong><br><span style="font-size: 0.75rem; color: #64748B;">Prior year data import & dedicated setup</span></td>
+                <td class="highlight-cell">✓ Included</td>
+                <td>$300 – $600 Setup Fee</td>
+                <td>✕ None</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Canadian Tax Estimator -->
+    <section id="calculator" class="estimator-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-chip badge-amber">ESTIMATE YOUR FILING</span>
+          <h2 class="section-h2">Interactive Canadian Tax Estimator</h2>
+          <p class="section-p">Select your taxpayer category below to calculate your required document slips, turnaround estimate, and instant transparent quote.</p>
+        </div>
+
+        <div class="estimator-grid">
+          <div class="estimator-input-card">
+            <h3 style="font-size: 1.15rem; color: #FFFFFF;">Step 1: Choose Your Filing Category</h3>
+            
+            <div class="persona-grid">
+              <button class="persona-btn active" data-type="personal">
+                <strong style="display: block;">👤 T1 Personal</strong>
+                <span style="font-size: 0.75rem; opacity: 0.8;">Employee / Family</span>
+              </button>
+              <button class="persona-btn" data-type="freelance">
+                <strong style="display: block;">💻 Self-Employed</strong>
+                <span style="font-size: 0.75rem; opacity: 0.8;">Uber / Contractor</span>
+              </button>
+              <button class="persona-btn" data-type="smb">
+                <strong style="display: block;">🏪 Small Business</strong>
+                <span style="font-size: 0.75rem; opacity: 0.8;">Sole Prop / SMB</span>
+              </button>
+              <button class="persona-btn" data-type="corporate">
+                <strong style="display: block;">🏢 T2 Corporate</strong>
+                <span style="font-size: 0.75rem; opacity: 0.8;">Incorporated Co.</span>
+              </button>
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 800; margin-bottom: 0.5rem;">
+                <span>Number of T4 Income Slips:</span>
+                <span id="t4-count-label" style="color: #38BDF8;">1 Slip</span>
+              </div>
+              <input type="range" id="t4-slider" min="1" max="5" value="1" style="width: 100%; cursor: pointer;">
+            </div>
+          </div>
+
+          <div class="estimator-output-card">
+            <div>
+              <span style="font-size: 0.75rem; font-weight: 800; color: #38BDF8; text-transform: uppercase;">RECOMMENDED PACKAGE</span>
+              <h3 id="calc-title" style="font-size: 1.5rem; color: #FFFFFF; font-family: var(--font-heading); margin: 0.25rem 0 0.75rem;">Personal Tax Return (T1)</h3>
+              
+              <div style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); padding: 0.65rem 0.85rem; border-radius: 6px; font-size: 0.8rem; color: #34D399; font-weight: 800; margin-bottom: 1.25rem;">
+                ⚡ Guaranteed Turnaround: <span id="calc-turnaround">24 – 48 Hours</span>
+              </div>
+
+              <h4 style="font-size: 0.75rem; font-weight: 800; color: #94A3B8; text-transform: uppercase; margin-bottom: 0.5rem;">Required Document Slips:</h4>
+              <ul id="calc-docs-list" style="list-style: none; font-size: 0.85rem; color: #FFFFFF; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem;">
+                <li><span style="color: #38BDF8; font-weight: 900;">✓</span> 1 × T4 / T4A Income Slip(s)</li>
+                <li><span style="color: #38BDF8; font-weight: 900;">✓</span> RRSP Contribution Receipts</li>
+                <li><span style="color: #38BDF8; font-weight: 900;">✓</span> Medical & Donation Receipts</li>
+              </ul>
+            </div>
+
+            <button id="calc-whatsapp-btn" class="btn btn-whatsapp" style="width: 100%; font-size: 0.9rem;">
+              💬 Send Estimator Summary on WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRA Hub Section -->
+    <section class="section-padding" style="background: #F0F6FF; border-bottom: 1px solid #E2E8F0;">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-chip">CANADA REVENUE AGENCY</span>
+          <h2 class="section-h2">Know the CRA. File with Confidence.</h2>
+          <p class="section-p">The CRA administers Canada's tax laws for the federal government. Test federal income tax bracket calculations below.</p>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #BAE6FD; padding: 1.75rem; border-radius: 12px; max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+              <span style="font-size: 0.75rem; color: #0369A1; font-weight: 800;">2025/2026 BRACKET VISUALIZER</span>
+              <h3 style="font-size: 1.25rem; color: #0F172A; margin-top: 0.25rem;">Test Income Tax Calculation</h3>
+            </div>
+            <div style="background: #F8FAFC; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #E2E8F0; font-size: 0.85rem;">
+              <span>Income: </span><strong id="income-val" style="color: #0284C7;">$65,000</strong>
+              <span style="margin: 0 0.5rem; color: #CBD5E1;">|</span>
+              <span>Est. Tax: </span><strong id="tax-est-val" style="color: #059669;">~$12,025</strong>
+            </div>
+          </div>
+          <input type="range" id="income-slider" min="20000" max="250000" step="5000" value="65000" style="width: 100%; cursor: pointer;">
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section id="faq" class="section-padding" style="background: #FFFFFF;">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="badge-chip">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 class="section-h2">Common Questions, Clear Answers</h2>
+          <p class="section-p">Everything you need to know about QuicTax.ca flat pricing, CRA NETFILE, and My AI Assistant.</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+          <details style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1.25rem; border-radius: 8px; cursor: pointer;">
+            <summary style="font-weight: 800; color: #0F172A; font-size: 0.95rem;">Is QuicTax.ca NETFILE certified by the CRA?</summary>
+            <p style="font-size: 0.85rem; color: #475569; margin-top: 0.75rem; line-height: 1.6;">
+              Yes! QuicTax.ca is fully certified by the Canada Revenue Agency (CRA) for both NETFILE (personal returns) and EFILE (tax preparers).
+            </p>
+          </details>
+
+          <details style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1.25rem; border-radius: 8px; cursor: pointer;">
+            <summary style="font-weight: 800; color: #0F172A; font-size: 0.95rem;">How does My AI Tax Assistant work?</summary>
+            <p style="font-size: 0.85rem; color: #475569; margin-top: 0.75rem; line-height: 1.6;">
+              Simply upload photos or PDFs of your T4, T5, T3, or W-2 slips. The AI uses OCR technology to parse data fields into CRA forms automatically for your review.
+            </p>
+          </details>
+
+          <details style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1.25rem; border-radius: 8px; cursor: pointer;">
+            <summary style="font-weight: 800; color: #0F172A; font-size: 0.95rem;">Are there any hidden per-return fees on annual plans?</summary>
+            <p style="font-size: 0.85rem; color: #475569; margin-top: 0.75rem; line-height: 1.6;">
+              No! All annual flat plans ($149, $299, $599) include unlimited T1/T2 returns with zero transmission fees.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Demo Center Modal Pop-Up -->
+  <div id="demo-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <strong style="color: #FFFFFF; font-size: 1.1rem; font-family: var(--font-heading); display: block;">QuicTax.ca Interactive Demo Center</strong>
+          <span style="font-size: 0.75rem; color: #94A3B8;">Test drive Canada's premier cloud tax software platform</span>
+        </div>
+        <button class="modal-close-btn close-demo-modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div style="background: #071324; border: 1px solid rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 12px; text-align: center; margin-bottom: 1.5rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">▶</div>
+          <h4 style="font-size: 1.1rem; color: #FFFFFF; font-family: var(--font-heading);">QuicTax.ca 3-Minute Guided Product Tour</h4>
+          <p style="font-size: 0.8rem; color: #CBD5E1; margin-top: 0.5rem;">See how T1, T2125, T2 returns, CRA NetFile sync, and My AI Tax Assistant operate inside the workspace.</p>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20schedule%20a%201-on-1%20demo." target="_blank" class="btn btn-primary-blue">
+            💬 Book 1-on-1 Demo via WhatsApp
+          </a>
+          <button class="btn btn-secondary-white close-demo-modal">Close Demo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi-Column Light/Navy Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+            <div style="width: 32px; height: 32px; background: #0284C7; color: #FFFFFF; border-radius: 6px; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">Q</div>
+            <span style="font-size: 1.35rem; font-weight: 900; color: #FFFFFF; font-family: var(--font-heading);">Quic<span style="color: #38BDF8;">Tax</span>.ca</span>
+          </div>
+          <p style="font-size: 0.8rem; color: #94A3B8; line-height: 1.6;">
+            Cloud-based professional tax software & filing platform for Canadian taxpayers, accountants, freelancers, and corporations. Unlimited returns, all provinces, CRA direct e-filing.
+          </p>
+          <p style="font-size: 0.75rem; color: #CBD5E1; margin-top: 1rem; font-weight: 700;">
+            📍 Mississauga, ON • Serving All of Canada Online
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Products</h4>
+          <ul class="footer-links">
+            <li><a href="#pricing">Individual PRO ($149/yr)</a></li>
+            <li><a href="#pricing">Essential SMB ($299/yr)</a></li>
+            <li><a href="#pricing">Unlimited Firm ($599/yr)</a></li>
+            <li><a href="#comparison">Feature Comparison</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Features</h4>
+          <ul class="footer-links">
+            <li><a href="#features">My AI Tax Assistant</a></li>
+            <li><a href="#features">CRA NETFILE Direct Sync</a></li>
+            <li><a href="#features">MyTAXPortal (Client Locker)</a></li>
+            <li><a href="#features">Refund Transfer Fast Forward</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="cra.html">CRA Resource Hub</a></li>
+            <li><a href="tax-articles.html">Tax Articles</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Advanced Canadian Tax Solutions, Inc. Creators of QuicTax.ca. All Rights Reserved.</p>
+        <p>CRA NETFILE & EFILE Certified Software • Mississauga, Ontario, Canada</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky WhatsApp Action Trigger -->
+  <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20file%20my%20taxes." target="_blank" style="position: fixed; bottom: 24px; right: 24px; z-index: 999; background: #25D366; color: white; border-radius: 8px; padding: 12px 20px; font-weight: 800; font-size: 0.85rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 8px;">
+    <span>💬 Ask on WhatsApp</span>
+  </a>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
 </body>
 </html>
