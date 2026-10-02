@@ -90,6 +90,24 @@ a:hover {
 }
 
 /* ==========================================================================
+   Top Ticker Bar
+   ========================================================================== */
+
+.top-announcement-bar {
+  background-color: #F0F6FF;
+  border-bottom: 1px solid #BAE6FD;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+}
+
+.top-bar-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ==========================================================================
    Pill Buttons & Badges (Matching quictax.ca)
    ========================================================================== */
 
@@ -245,7 +263,6 @@ a:hover {
   font-weight: 800;
 }
 
-/* Simple Clean Menu Links matching quictax.ca */
 .main-nav {
   display: flex;
   align-items: center;
@@ -271,7 +288,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Hero Section (Light & Bright White with Interactive Workspace Window)
+   Hero Section (Light & Bright White with Trust Cards)
    ========================================================================== */
 
 .hero-section {
@@ -314,6 +331,14 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.hero-trust-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-card);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-xl);
+}
+
 /* Stats Bar */
 .stats-section {
   background-color: var(--primary-blue);
@@ -341,90 +366,6 @@ a:hover {
   font-size: 0.85rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
-}
-
-/* Workspace Window */
-.workspace-window {
-  background: #FFFFFF;
-  border: 1.5px solid var(--border-medium);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-xl);
-  overflow: hidden;
-}
-
-.window-header {
-  background: var(--bg-slate-100);
-  color: var(--text-dark);
-  padding: 0.75rem 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  font-weight: 700;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.window-controls {
-  display: flex;
-  gap: 0.35rem;
-}
-
-.dot { width: 10px; height: 10px; border-radius: 50%; }
-.dot-red { background: #EF4444; }
-.dot-yellow { background: #F59E0B; }
-.dot-green { background: #10B981; }
-
-.workspace-tabs {
-  display: flex;
-  background: var(--bg-slate-50);
-  border-bottom: 1px solid var(--border-light);
-  padding: 0.5rem 0.5rem 0;
-  gap: 0.25rem;
-  overflow-x: auto;
-}
-
-.tab-btn {
-  padding: 0.6rem 1rem;
-  font-size: 0.75rem;
-  font-weight: 800;
-  font-family: var(--font-heading);
-  border: none;
-  background: transparent;
-  color: var(--text-muted);
-  cursor: pointer;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  transition: all 0.15s ease;
-}
-
-.tab-btn.active {
-  background: #FFFFFF;
-  color: var(--primary-blue);
-  border-bottom: 2px solid var(--primary-blue);
-}
-
-.tab-content-body {
-  padding: 1.5rem;
-  min-height: 260px;
-}
-
-.ocr-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 0.75rem;
-  font-size: 0.75rem;
-}
-
-.ocr-table th, .ocr-table td {
-  padding: 0.5rem 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.ocr-table th {
-  background: var(--bg-slate-50);
-  color: var(--text-muted);
-  font-weight: 700;
 }
 
 /* ==========================================================================
@@ -486,10 +427,6 @@ a:hover {
   border-color: var(--primary-blue);
 }
 
-.service-card.featured-blue h3, .service-card.featured-blue p {
-  color: #FFFFFF;
-}
-
 /* ==========================================================================
    Three Steps Process
    ========================================================================== */
@@ -533,134 +470,6 @@ a:hover {
   font-family: var(--font-heading);
 }
 
-/* ==========================================================================
-   Flat Pricing Plans & Cost Calculator
-   ========================================================================== */
-
-.pricing-section {
-  background: #FFFFFF;
-  padding: 5.5rem 0;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 3.5rem;
-}
-
-.pricing-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-card);
-  padding: 2.25rem;
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  transition: all 0.25s ease;
-}
-
-.pricing-card:hover {
-  box-shadow: var(--shadow-xl);
-  transform: translateY(-4px);
-}
-
-.pricing-card.featured {
-  border: 2.5px solid var(--primary-blue);
-  transform: scale(1.03);
-}
-
-.price-val {
-  font-size: 2.75rem;
-  font-weight: 900;
-  font-family: var(--font-heading);
-  color: var(--text-dark);
-}
-
-.pricing-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  font-size: 0.85rem;
-  color: var(--text-body);
-  margin: 1.5rem 0 2rem;
-}
-
-.pricing-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-/* Side-by-Side Comparison Table */
-.comparison-table-wrap {
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  margin-bottom: 2.5rem;
-}
-
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.comparison-table th, .comparison-table td {
-  padding: 1rem 1.25rem;
-  text-align: left;
-}
-
-.comparison-table th {
-  background: var(--bg-slate-100);
-  color: var(--text-dark);
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 2px solid var(--border-medium);
-}
-
-.comparison-table td {
-  border-bottom: 1px solid var(--border-light);
-  font-size: 0.85rem;
-}
-
-.comparison-table td.highlight-cell {
-  background: #F0F9FF;
-  font-weight: 800;
-  color: #0369A1;
-}
-
-/* Interactive Tax Estimator */
-.estimator-section {
-  background: var(--bg-sky-tint);
-  color: var(--text-dark);
-  padding: 5.5rem 0;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.estimator-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-
-.estimator-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-card);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  box-shadow: var(--shadow-md);
-}
-
 /* Articles Grid */
 .articles-section {
   padding: 5.5rem 0;
@@ -702,56 +511,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-}
-
-/* Modal Window */
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(4px);
-  z-index: 2000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-}
-
-.modal-backdrop.open {
-  display: flex;
-}
-
-.modal-card {
-  background: #FFFFFF;
-  color: var(--text-dark);
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-card);
-  width: 100%;
-  max-width: 720px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: var(--shadow-xl);
-}
-
-.modal-header {
-  padding: 1.25rem 1.75rem;
-  background: var(--bg-slate-50);
-  border-bottom: 1px solid var(--border-light);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.modal-body {
-  padding: 1.75rem;
-}
-
-.modal-close-btn {
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
-  font-size: 1.5rem;
-  cursor: pointer;
 }
 
 /* Clean Footer matching quictax.ca */
@@ -807,10 +566,10 @@ a:hover {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-  .hero-grid, .estimator-grid, .services-grid {
+  .hero-grid, .services-grid {
     grid-template-columns: 1fr;
   }
-  .pricing-grid, .articles-grid, .process-grid {
+  .articles-grid, .process-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .footer-grid {
@@ -819,7 +578,7 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .pricing-grid, .articles-grid, .process-grid, .stats-grid {
+  .articles-grid, .process-grid, .stats-grid {
     grid-template-columns: 1fr;
   }
   .mobile-toggle {
@@ -843,4 +602,5 @@ a:hover {
   }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-title { font-size: 2.35rem; }
+  .top-bar-flex { flex-direction: column; text-align: center; }
 }

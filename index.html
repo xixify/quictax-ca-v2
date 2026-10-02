@@ -91,7 +91,7 @@
 
   <main>
 
-    <!-- Hero Section (Light & Bright White with Interactive Workspace Window) -->
+    <!-- Hero Section (Light & Bright White with Trust Cards) -->
     <section id="hero" class="hero-section">
       <div class="container">
         <div class="hero-grid">
@@ -99,14 +99,14 @@
           <!-- Left Column -->
           <div class="hero-content">
             <div>
-              <span class="badge-pill badge-amber">
-                Canada's most affordable tax filing service
+              <span class="badge-pill badge-emerald">
+                🇨🇦 Canada's most affordable tax filing service
               </span>
             </div>
 
             <h1 class="hero-title">
               File Smarter. <br>
-              <span class="highlight">Pay Less.</span> <br>
+              <span style="color: #0284C7;">Pay Less.</span> <br>
               Stress Never.
             </h1>
 
@@ -122,117 +122,53 @@
               <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20start%20filing%20my%20taxes." target="_blank" class="btn btn-primary-blue" style="padding: 0.95rem 2rem; font-size: 1rem;">
                 💬 Get Started on WhatsApp →
               </a>
-              <a href="#services" class="btn btn-secondary-outline" style="padding: 0.95rem 1.8rem; font-size: 1rem;">
+              <a href="tel:+12895275237" class="btn btn-secondary-outline" style="padding: 0.95rem 1.5rem; font-size: 0.95rem;">
+                📞 (289) 527-5237
+              </a>
+              <a href="#services" class="btn btn-secondary-outline" style="padding: 0.95rem 1.5rem; font-size: 0.95rem;">
                 See our services →
               </a>
             </div>
           </div>
 
-          <!-- Right Column: Interactive Product Workspace Window Preview -->
-          <div class="workspace-window">
-            <div class="window-header">
-              <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <div class="window-controls">
-                  <div class="dot dot-red"></div>
-                  <div class="dot dot-yellow"></div>
-                  <div class="dot dot-green"></div>
-                </div>
-                <span style="color: #0F172A;">QuicTax.ca Workspace v2.0</span>
-              </div>
-              <span class="badge-pill badge-emerald">
-                ● CRA NETFILE Certified
-              </span>
+          <!-- Right Column: Hero Visual Trust Card -->
+          <div class="hero-trust-card" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 24px; padding: 1.75rem; box-shadow: var(--shadow-xl);">
+            <div style="background: #F0F6FF; border: 1px solid #BAE6FD; padding: 1rem 1.25rem; border-radius: 16px; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-weight: 800; color: #0369A1; font-size: 0.85rem;">🛡️ CRA Certified Tax Specialists</span>
+              <span class="badge-pill badge-emerald">Active Online</span>
             </div>
 
-            <!-- Tabs -->
-            <div class="workspace-tabs">
-              <button class="tab-btn workspace-tab active" data-target="panel-ai">✨ My AI Assistant</button>
-              <button class="tab-btn workspace-tab" data-target="panel-netfile">⚡ CRA EFILE Sync</button>
-              <button class="tab-btn workspace-tab" data-target="panel-refund">💰 Refund Transfer</button>
-              <button class="tab-btn workspace-tab" data-target="panel-portal">👥 Client Portal</button>
-            </div>
-
-            <!-- Tab Content Panels -->
-            <div class="tab-content-body">
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
               
-              <!-- Panel 1: AI Assistant -->
-              <div id="panel-ai" class="workspace-panel" style="display: block;">
-                <div style="background: #E0F2FE; border: 1px solid #BAE6FD; padding: 0.85rem 1rem; border-radius: 12px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
-                  <div>
-                    <strong style="color: #0369A1; font-size: 0.85rem; display: block;">My AI Assistant — Auto Form Extraction</strong>
-                    <span style="color: #0369A1; font-size: 0.75rem;">Upload T4, T5, T3, W-2, or receipts. AI parses slip values into CRA schedules.</span>
-                  </div>
-                  <button id="simulate-ocr-btn" class="btn btn-primary-blue" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Scan Sample Slip</button>
-                </div>
-
-                <div id="ocr-status-text" style="font-size: 0.75rem; color: #64748B; font-weight: 700; margin-bottom: 0.75rem;">
-                  Click "Scan Sample Slip" above to simulate AI OCR slip extraction.
-                </div>
-
-                <table class="ocr-table">
-                  <thead>
-                    <tr>
-                      <th>Slip Field Name</th>
-                      <th>Box #</th>
-                      <th>Extracted Value</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="ocr-data-row">
-                      <td><strong>Employment Income (T4)</strong></td>
-                      <td>Box 14</td>
-                      <td><strong style="color: #059669;">$78,450.00</strong></td>
-                      <td><span style="color: #059669; font-weight: 800;">✓ Verified</span></td>
-                    </tr>
-                    <tr class="ocr-data-row">
-                      <td><strong>Income Tax Deducted</strong></td>
-                      <td>Box 22</td>
-                      <td><strong style="color: #0284C7;">$14,210.00</strong></td>
-                      <td><span style="color: #059669; font-weight: 800;">✓ Verified</span></td>
-                    </tr>
-                    <tr class="ocr-data-row">
-                      <td><strong>CPP Contributions</strong></td>
-                      <td>Box 16</td>
-                      <td>$3,754.45</td>
-                      <td><span style="color: #059669; font-weight: 800;">✓ Verified</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!-- Panel 2: CRA NETFILE -->
-              <div id="panel-netfile" class="workspace-panel" style="display: none;">
-                <div style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1rem; border-radius: 12px;">
-                  <strong style="color: #0F172A; font-size: 0.85rem; display: block; margin-bottom: 0.5rem;">CRA Direct Web API Transmission</strong>
-                  <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 1rem;">Direct electronic filing to Canada Revenue Agency with instant confirmation receipt.</p>
-                  <div style="background: #D1FAE5; border: 1px solid #A7F3D0; padding: 0.75rem; border-radius: 6px; color: #065F46; font-size: 0.8rem; font-weight: 700;">
-                    ✓ CRA NETFILE Accepted — Confirmation Code: CRA-T1-2026-984029148A
-                  </div>
+              <div style="background: #FFFFFF; border: 1px solid #E2E8F0; padding: 1.25rem; border-radius: 16px; display: flex; align-items: flex-start; gap: 1rem; box-shadow: var(--shadow-sm);">
+                <div style="width: 44px; height: 44px; background: #E0F2FE; color: #0284C7; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0; font-weight: 900;">👤</div>
+                <div>
+                  <h4 style="font-size: 1rem; color: #0F172A; margin-bottom: 0.2rem;">Human-Assisted Expertise</h4>
+                  <p style="font-size: 0.8rem; color: #64748B; line-height: 1.5;">Real Canadian tax professionals review every slip to ensure maximum refund & deduction optimization.</p>
                 </div>
               </div>
 
-              <!-- Panel 3: Refund Transfer -->
-              <div id="panel-refund" class="workspace-panel" style="display: none;">
-                <div style="background: #FEF3C7; border: 1px solid #FDE68A; padding: 1rem; border-radius: 12px;">
-                  <strong style="color: #92400E; font-size: 0.85rem; display: block;">Integrated Bank Refund Transfer</strong>
-                  <p style="font-size: 0.8rem; color: #92400E; margin-top: 0.25rem;">Tax preparation fees can be collected directly from the client’s refund. Zero out-of-pocket payment required.</p>
+              <div style="background: #FFFFFF; border: 1px solid #E2E8F0; padding: 1.25rem; border-radius: 16px; display: flex; align-items: flex-start; gap: 1rem; box-shadow: var(--shadow-sm);">
+                <div style="width: 44px; height: 44px; background: #ECFDF5; color: #047857; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0; font-weight: 900;">⚡</div>
+                <div>
+                  <h4 style="font-size: 1rem; color: #0F172A; margin-bottom: 0.2rem;">Fast 48-Hour Turnaround</h4>
+                  <p style="font-size: 0.8rem; color: #64748B; line-height: 1.5;">Send documents via WhatsApp or email — your return is filed directly with CRA NETFILE/EFILE.</p>
                 </div>
               </div>
 
-              <!-- Panel 4: Client Portal -->
-              <div id="panel-portal" class="workspace-panel" style="display: none;">
-                <div style="background: #F3E8FF; border: 1px solid #E9D5FF; padding: 1rem; border-radius: 12px;">
-                  <strong style="color: #6B21A8; font-size: 0.85rem; display: block;">MyTAXPortal & Remote E-Signatures</strong>
-                  <p style="font-size: 0.8rem; color: #6B21A8; margin-top: 0.25rem;">Collect Form T183 remote digital signatures and documents securely from smartphone or desktop.</p>
+              <div style="background: #FFFFFF; border: 1px solid #E2E8F0; padding: 1.25rem; border-radius: 16px; display: flex; align-items: flex-start; gap: 1rem; box-shadow: var(--shadow-sm);">
+                <div style="width: 44px; height: 44px; background: #FEF3C7; color: #B45309; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; flex-shrink: 0; font-weight: 900;">🇨🇦</div>
+                <div>
+                  <h4 style="font-size: 1rem; color: #0F172A; margin-bottom: 0.2rem;">All Return Types Handled</h4>
+                  <p style="font-size: 0.8rem; color: #64748B; line-height: 1.5;">T1 Personal Returns, T2125 Self-Employed & Freelance, Small Business, and T2 Corporate Taxes.</p>
                 </div>
               </div>
 
             </div>
 
-            <div style="background: #F8FAFC; border-top: 1px solid #E2E8F0; padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem;">
-              <span style="color: #64748B;">Want to see the full platform live?</span>
-              <a href="#" class="trigger-demo-modal" style="color: #0284C7; font-weight: 800;">Launch Full Demo Center →</a>
+            <div style="margin-top: 1.25rem; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1rem; border-radius: 12px; text-align: center;">
+              <span style="font-size: 0.8rem; color: #475569; font-weight: 700;">Ready to get started? </span>
+              <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20file%20my%20taxes." target="_blank" style="color: #25D366; font-weight: 900; text-decoration: none; margin-left: 0.35rem;">Chat with a Specialist →</a>
             </div>
           </div>
 
@@ -243,7 +179,7 @@
     <!-- Stats Bar (Matching quictax.ca) -->
     <section class="stats-section">
       <div class="container">
-        <p style="text-align: center; font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2rem;">
+        <p style="text-align: center; font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2rem;">
           Trusted by clients across Canada — at prices that beat the competition
         </p>
 
@@ -279,10 +215,10 @@
         <div class="services-grid">
           
           <!-- Personal Tax -->
-          <div class="service-card" style="grid-column: span 1;">
+          <div class="service-card">
             <div>
               <span class="badge-pill" style="margin-bottom: 1rem;">Individuals</span>
-              <h3 style="font-size: 1.75rem; font-family: var(--font-heading); margin-bottom: 0.5rem;">Personal Tax Filing (T1)</h3>
+              <h3 style="font-size: 1.75rem; font-family: var(--font-heading); margin-bottom: 0.5rem; color: #0F172A;">Personal Tax Filing (T1)</h3>
               <p style="color: #64748B; font-size: 0.95rem; margin-bottom: 1.25rem;">
                 Maximize your refund with a fast, guided personal return prepared by Canadian tax specialists.
               </p>
@@ -299,8 +235,8 @@
           <div class="service-card featured-blue">
             <div>
               <span class="badge-pill" style="background: rgba(255,255,255,0.2); color: #FFFFFF; border-color: rgba(255,255,255,0.3); margin-bottom: 1rem;">SMBs</span>
-              <h3 style="font-size: 1.75rem; font-family: var(--font-heading); margin-bottom: 0.5rem;">Small Business Tax</h3>
-              <p style="font-size: 0.95rem; margin-bottom: 1.25rem;">
+              <h3 style="font-size: 1.75rem; font-family: var(--font-heading); margin-bottom: 0.5rem; color: #FFFFFF;">Small Business Tax</h3>
+              <p style="font-size: 0.95rem; margin-bottom: 1.25rem; color: #F0F6FF;">
                 Keep more of what you earn with smart small business filing, CCA review, and expense deductions.
               </p>
               <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: #E0F2FE; margin-bottom: 1.5rem;">
@@ -316,7 +252,7 @@
           <div class="service-card">
             <div>
               <span class="badge-pill" style="background: #F3E8FF; color: #7E22CE; border-color: #E9D5FF; margin-bottom: 1rem;">Corporations</span>
-              <h3 style="font-size: 1.75rem; font-family: var(--font-heading); margin-bottom: 0.5rem;">Corporate Tax (T2)</h3>
+              <h3 style="font-size: 1.75rem; font-family: var(--font-heading); margin-bottom: 0.5rem; color: #0F172A;">Corporate Tax (T2)</h3>
               <p style="color: #64748B; font-size: 0.95rem; margin-bottom: 1.25rem;">
                 Full T2 corporate income tax compliance handled accurately, on time, and optimized for your corporation.
               </p>
@@ -333,7 +269,7 @@
           <div class="service-card">
             <div>
               <span class="badge-pill" style="margin-bottom: 1rem;">Freelancers</span>
-              <h3 style="font-size: 1.75rem; font-family: var(--font-heading); margin-bottom: 0.5rem;">Freelancer & Self-Employed</h3>
+              <h3 style="font-size: 1.75rem; font-family: var(--font-heading); margin-bottom: 0.5rem; color: #0F172A;">Freelancer & Self-Employed</h3>
               <p style="color: #64748B; font-size: 0.95rem; margin-bottom: 1.25rem;">
                 Deductions, home office, vehicle gas/mileage write-offs, and HST remittances — sorted painless.
               </p>
@@ -354,14 +290,14 @@
     <section class="process-section">
       <div class="container">
         <div class="section-title-wrap">
-          <span class="badge-chip">SIMPLE PROCESS</span>
+          <span class="badge-pill">SIMPLE PROCESS</span>
           <h2 class="section-h2">Three Steps to Done</h2>
         </div>
 
         <div class="process-grid">
           <div class="process-card">
             <div class="process-num">01</div>
-            <h3 style="font-size: 1.25rem;">Contact Us</h3>
+            <h3 style="font-size: 1.25rem; color: #0F172A;">Contact Us</h3>
             <p style="font-size: 0.85rem; color: #64748B; line-height: 1.6;">
               Reach out on WhatsApp — we respond fast, walk you through what we need, and analyze your situation to provide the most cost-effective quotation.
             </p>
@@ -369,7 +305,7 @@
 
           <div class="process-card">
             <div class="process-num">02</div>
-            <h3 style="font-size: 1.25rem;">Share Documents</h3>
+            <h3 style="font-size: 1.25rem; color: #0F172A;">Share Documents</h3>
             <p style="font-size: 0.85rem; color: #64748B; line-height: 1.6;">
               Send smartphone photos or PDF files of your T4s, RRSP slips, or receipts securely. We handle all sorting, calculations, and compliance.
             </p>
@@ -377,7 +313,7 @@
 
           <div class="process-card">
             <div class="process-num">03</div>
-            <h3 style="font-size: 1.25rem;">Get Filed</h3>
+            <h3 style="font-size: 1.25rem; color: #0F172A;">Get Filed</h3>
             <p style="font-size: 0.85rem; color: #64748B; line-height: 1.6;">
               We submit your return directly to the CRA via NETFILE and send you a complete filing summary copy. Done — fast and stress-free.
             </p>
@@ -386,20 +322,38 @@
       </div>
     </section>
 
-
+    <!-- Ready to File Smarter CTA Banner -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #F0F6FF 0%, #E0F2FE 100%); border-bottom: 1px solid #BAE6FD;">
+      <div class="container">
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; background: #FFFFFF; border: 1px solid #BAE6FD; border-radius: 24px; padding: 3rem; box-shadow: var(--shadow-md); max-width: 900px; margin: 0 auto;">
+          <div style="max-width: 650px;">
+            <h2 style="font-size: 2.25rem; color: #0F172A; font-family: var(--font-heading); margin-bottom: 0.75rem;">Ready to file smarter?</h2>
+            <p style="font-size: 1.05rem; color: #475569; line-height: 1.6;">Join hundreds of clients across Canada who trust QuicTax for fast, accurate, and stress-free tax filing.</p>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem;">
+            <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20file%20my%20taxes." target="_blank" class="btn btn-whatsapp" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
+              💬 Start on WhatsApp
+            </a>
+            <a href="tel:+12895275237" class="btn btn-secondary-outline" style="padding: 1rem 2rem; font-size: 1rem;">
+              📞 (289) 527-5237
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- About Section (Matching quictax.ca /about) -->
     <section id="about" class="section-padding" style="background: #F8FAFC; border-bottom: 1px solid #E2E8F0;">
       <div class="container">
         <div class="section-title-wrap">
-          <span class="badge-chip">ABOUT QUICTAX</span>
+          <span class="badge-pill">ABOUT QUICTAX</span>
           <h2 class="section-h2">Built to Make Tax Season Painless</h2>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto;">
           <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80" alt="About QuicTax Team" style="border-radius: 24px; width: 100%; height: 320px; object-fit: cover; box-shadow: var(--shadow-md);">
           <div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Why QuicTax Exists</h3>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: #0F172A;">Why QuicTax Exists</h3>
             <p style="font-size: 0.95rem; color: #475569; line-height: 1.7; margin-bottom: 1rem;">
               Tax season used to mean long waits, confusing forms, and expensive accountants. We saw an opportunity to change that — to bring the speed, simplicity, and clarity of modern communication to a process that hadn't changed in decades.
             </p>
@@ -415,7 +369,7 @@
     <section id="cra" class="section-padding" style="background: #FFFFFF; border-bottom: 1px solid #E2E8F0;">
       <div class="container">
         <div class="section-title-wrap">
-          <span class="badge-chip">CANADA REVENUE AGENCY</span>
+          <span class="badge-pill">CANADA REVENUE AGENCY</span>
           <h2 class="section-h2">Know the CRA. File with Confidence.</h2>
           <p class="section-p">The CRA administers Canada's tax laws for the federal government. Test federal income tax bracket calculations below.</p>
         </div>
@@ -441,7 +395,7 @@
     <section id="tax-articles" class="articles-section">
       <div class="container">
         <div class="section-title-wrap">
-          <span class="badge-chip">TAX KNOWLEDGE HUB</span>
+          <span class="badge-pill">TAX KNOWLEDGE HUB</span>
           <h2 class="section-h2">Tax Articles & Tips for Canadians</h2>
           <p class="section-p">Expert insights on Canadian tax filing, deductions, credits, and CRA updates written by our tax specialists.</p>
         </div>
@@ -451,11 +405,11 @@
           <div class="article-card">
             <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=600&q=80" alt="Home office expenses" class="article-thumb">
             <div class="article-body">
-              <span class="badge-chip" style="width: fit-content;">Deductions</span>
-              <h3 style="font-size: 1.1rem; margin-top: 0.25rem;">How to Claim Home Office Expenses in Canada</h3>
+              <span class="badge-pill" style="width: fit-content;">Deductions</span>
+              <h3 style="font-size: 1.1rem; margin-top: 0.25rem; color: #0F172A;">How to Claim Home Office Expenses in Canada</h3>
               <p style="font-size: 0.8rem; color: #64748B;">Learn how to claim home office expenses Canada rules allow, from eligible costs to workspace calculations.</p>
             </div>
-            <div class="article-footer">
+            <div style="padding: 1rem 1.5rem; border-top: 1px solid #E2E8F0; display: flex; justify-content: space-between; font-size: 0.8rem; color: #0284C7; font-weight: 800;">
               <span>Read Article</span>
               <span>→</span>
             </div>
@@ -464,11 +418,11 @@
           <div class="article-card">
             <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Self employment CPP" class="article-thumb">
             <div class="article-body">
-              <span class="badge-chip badge-emerald" style="width: fit-content;">Self-Employed</span>
-              <h3 style="font-size: 1.1rem; margin-top: 0.25rem;">How to Calculate Self Employment CPP in Canada</h3>
+              <span class="badge-pill badge-emerald" style="width: fit-content;">Self-Employed</span>
+              <h3 style="font-size: 1.1rem; margin-top: 0.25rem; color: #0F172A;">How to Calculate Self Employment CPP in Canada</h3>
               <p style="font-size: 0.8rem; color: #64748B;">Learn how Canada Pension Plan contributions work for self-employed workers and freelancers.</p>
             </div>
-            <div class="article-footer">
+            <div style="padding: 1rem 1.5rem; border-top: 1px solid #E2E8F0; display: flex; justify-content: space-between; font-size: 0.8rem; color: #0284C7; font-weight: 800;">
               <span>Read Article</span>
               <span>→</span>
             </div>
@@ -477,11 +431,11 @@
           <div class="article-card">
             <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Corporate Tax" class="article-thumb">
             <div class="article-body">
-              <span class="badge-chip" style="background: #F3E8FF; color: #7E22CE; border-color: #E9D5FF; width: fit-content;">Corporate</span>
-              <h3 style="font-size: 1.1rem; margin-top: 0.25rem;">Corporate Tax Penalties Canadian Businesses Face</h3>
+              <span class="badge-pill" style="background: #F3E8FF; color: #7E22CE; border-color: #E9D5FF; width: fit-content;">Corporate</span>
+              <h3 style="font-size: 1.1rem; margin-top: 0.25rem; color: #0F172A;">Corporate Tax Penalties Canadian Businesses Face</h3>
               <p style="font-size: 0.8rem; color: #64748B;">Understand the CRA corporate tax penalties for late filing and missing schedules.</p>
             </div>
-            <div class="article-footer">
+            <div style="padding: 1rem 1.5rem; border-top: 1px solid #E2E8F0; display: flex; justify-content: space-between; font-size: 0.8rem; color: #0284C7; font-weight: 800;">
               <span>Read Article</span>
               <span>→</span>
             </div>
@@ -495,7 +449,7 @@
     <section id="faq" class="section-padding" style="background: #F8FAFC; border-bottom: 1px solid #E2E8F0;">
       <div class="container">
         <div class="section-title-wrap">
-          <span class="badge-chip">FREQUENTLY ASKED QUESTIONS</span>
+          <span class="badge-pill">FREQUENTLY ASKED QUESTIONS</span>
           <h2 class="section-h2">Common Questions, Clear Answers</h2>
         </div>
 
@@ -521,13 +475,13 @@
     <section id="contact" class="section-padding" style="background: #FFFFFF;">
       <div class="container">
         <div class="section-title-wrap">
-          <span class="badge-chip">GET IN TOUCH</span>
+          <span class="badge-pill">GET IN TOUCH</span>
           <h2 class="section-h2">Ready to file smarter?</h2>
           <p class="section-p">Join hundreds of clients who trust QuicTax for fast, accurate, and stress-free tax filing.</p>
         </div>
 
         <div style="max-width: 550px; margin: 0 auto; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 2.5rem; border-radius: 24px; text-align: center; box-shadow: var(--shadow-sm);">
-          <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Chat Directly With a Tax Specialist</h3>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; color: #0F172A;">Chat Directly With a Tax Specialist</h3>
           <p style="font-size: 0.85rem; color: #64748B; margin-bottom: 1.5rem;">Fastest response time • No commitment required</p>
 
           <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20file%20my%20taxes." target="_blank" class="btn btn-whatsapp" style="width: 100%; padding: 0.9rem;">
@@ -609,34 +563,6 @@
   <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20file%20my%20taxes." target="_blank" style="position: fixed; bottom: 24px; right: 24px; z-index: 999; background: #25D366; color: white; border-radius: 9999px; padding: 12px 22px; font-weight: 800; font-size: 0.85rem; text-decoration: none; box-shadow: 0 4px 14px rgba(37,211,102,0.3); display: flex; align-items: center; gap: 8px;">
     <span>💬 Chat on WhatsApp</span>
   </a>
-
-  <!-- Demo Center Modal Pop-Up -->
-  <div id="demo-modal" class="modal-backdrop">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div>
-          <strong style="color: #0F172A; font-size: 1.1rem; font-family: var(--font-heading); display: block;">QuicTax.ca Interactive Demo Center</strong>
-          <span style="font-size: 0.75rem; color: #64748B;">Test drive Canada's premier cloud tax software platform</span>
-        </div>
-        <button class="modal-close-btn close-demo-modal">&times;</button>
-      </div>
-
-      <div class="modal-body">
-        <div style="background: #F0F6FF; border: 1px solid #BAE6FD; padding: 1.5rem; border-radius: 16px; text-align: center; margin-bottom: 1.5rem;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">▶</div>
-          <h4 style="font-size: 1.1rem; color: #0F172A; font-family: var(--font-heading);">QuicTax.ca 3-Minute Guided Product Tour</h4>
-          <p style="font-size: 0.8rem; color: #475569; margin-top: 0.5rem;">See how T1, T2125, T2 returns, CRA NetFile sync, and My AI Tax Assistant operate inside the workspace.</p>
-        </div>
-
-        <div style="display: flex; gap: 1rem; justify-content: center;">
-          <a href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20schedule%20a%201-on-1%20demo." target="_blank" class="btn btn-primary-blue">
-            💬 Book 1-on-1 Demo via WhatsApp
-          </a>
-          <button class="btn btn-secondary-outline close-demo-modal">Close Demo</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Main JavaScript File -->
   <script src="js/main.js"></script>
