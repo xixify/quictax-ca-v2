@@ -1,158 +1,207 @@
 import React from 'react';
-import { Check, X, ShieldCheck, Zap } from 'lucide-react';
+import { Check, X, ShieldCheck, Sparkles } from 'lucide-react';
 
-export const ComparisonMatrix: React.FC = () => {
-  const comparisonData = [
-    {
-      feature: "Real Human Tax Specialist Preparation",
-      quictax: true,
-      cpa: true,
-      diy: false,
-      note: "QuicTax: Expert human eyes analyze every slip, no manual entry required."
-    },
-    {
-      feature: "48-Hour Average Filing Turnaround",
-      quictax: true,
-      cpa: false,
-      diy: false,
-      note: "Traditional CPA firms often take 2 to 4 weeks during tax season."
-    },
-    {
-      feature: "Instant WhatsApp Direct Communication",
-      quictax: true,
-      cpa: false,
-      diy: false,
-      note: "No office visits or waiting rooms. Chat directly on your phone."
-    },
-    {
-      feature: "Lowest Price Guaranteed ($0 Hidden Slip Fees)",
-      quictax: true,
-      cpa: false,
-      diy: false,
-      note: "Traditional accountants charge extra per slip. DIY software upsells."
-    },
-    {
-      feature: "Self-Employed & Freelancer Write-Off Optimization",
-      quictax: true,
-      cpa: true,
-      diy: false,
-      note: "We scan home office, vehicle mileage, tools, and HST Input Tax Credits."
-    },
-    {
-      feature: "CRA Audit Defense & Letter Support",
-      quictax: true,
-      cpa: true,
-      diy: false,
-      note: "We respond directly to CRA pre/post-assessment reviews."
-    },
-    {
-      feature: "Zero Stress / No Confusing Form Entry",
-      quictax: true,
-      cpa: true,
-      diy: false,
-      note: "Simply send photo receipts or PDFs over WhatsApp."
-    }
-  ];
+interface ComparisonMatrixProps {
+  onOpenDemo: () => void;
+}
 
+export const ComparisonMatrix: React.FC<ComparisonMatrixProps> = ({ onOpenDemo }) => {
   return (
-    <section className="py-20 bg-white border-b border-slate-200">
+    <section id="comparison" className="py-16 lg:py-24 bg-white border-b border-slate-200">
       <div className="container-custom">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 rounded-full px-3.5 py-1 text-xs font-bold uppercase tracking-wider mb-3">
-            WHY CANADIANS CHOOSE QUICTAX
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-heading tracking-tight text-slate-900">
-            How QuicTax Compares
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
+          <span className="badge-chip">TRANSPARENT VALUE COMPARISON</span>
+          <h2 className="text-3xl sm:text-4xl font-black font-heading text-[#0c1e36]">
+            Comparing Professional Tax Software? Add These Up.
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg mt-3">
-            See why hundreds of Canadians switch from expensive traditional CPA firms and frustrating DIY software to our fast, human-assisted tax service.
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+            With most professional tax software, the advertised license price isn't the total cost: provincial modules, per-return e-filing, client portals, and e-signatures are billed separately. <strong className="text-[#0c1e36]">QuicTax.ca includes them.</strong>
           </p>
         </div>
 
-        {/* Matrix Table */}
-        <div className="overflow-x-auto">
-          <table className="comparison-table border border-slate-200 min-w-[700px]">
+        {/* Comparison Table (Matching MyTAXPrepOffice) */}
+        <div className="overflow-x-auto mb-12 shadow-sm rounded-xl border border-slate-200">
+          <table className="comparison-table text-left">
             <thead>
-              <tr>
-                <th className="w-2/5 text-slate-700 bg-slate-100/80">Features & Experience</th>
-                <th className="w-1/5 text-center bg-slate-900 text-white font-bold py-4">
-                  <div className="flex flex-col items-center">
-                    <span className="text-cyan-400 text-xs uppercase font-heading tracking-widest">Recommended</span>
-                    <span className="text-lg font-black font-heading text-white">QuicTax.ca</span>
+              <tr className="bg-[#0c1e36] text-white">
+                <th className="w-2/5 p-4 text-xs font-bold font-heading uppercase tracking-wider text-slate-200">
+                  Feature & Capability
+                </th>
+                <th className="w-1/5 p-4 text-xs font-extrabold font-heading uppercase tracking-wider text-sky-400 bg-[#071324] border-x border-slate-700">
+                  <div className="flex items-center gap-1">
+                    <Sparkles className="w-4 h-4 text-amber-400" />
+                    <span>With QuicTax.ca</span>
                   </div>
                 </th>
-                <th className="w-1/5 text-center bg-slate-100 text-slate-700">Traditional CPA Firm</th>
-                <th className="w-1/5 text-center bg-slate-100 text-slate-700">DIY Tax Software</th>
+                <th className="w-1/5 p-4 text-xs font-bold font-heading uppercase tracking-wider text-slate-300">
+                  Traditional Legacy Tax Software
+                </th>
+                <th className="w-1/5 p-4 text-xs font-bold font-heading uppercase tracking-wider text-slate-300">
+                  DIY Tax Software & CPA Firms
+                </th>
               </tr>
             </thead>
-            <tbody>
-              {comparisonData.map((row, idx) => (
-                <tr key={idx}>
-                  <td className="font-semibold text-slate-800 text-sm">
-                    {row.feature}
-                    <span className="block text-xs font-normal text-slate-500 mt-0.5">{row.note}</span>
-                  </td>
 
-                  {/* QuicTax Column */}
-                  <td className="text-center bg-sky-50/50 border-x-2 border-sky-500/30">
-                    <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto shadow-sm">
-                      <Check className="w-5 h-5 stroke-[3]" />
-                    </div>
-                  </td>
+            <tbody className="divide-y divide-slate-200 text-xs font-medium text-slate-700">
+              
+              {/* Row 1 */}
+              <tr>
+                <td className="p-4">
+                  <strong className="text-[#0c1e36] block text-sm font-heading">Provincial Modules & Returns</strong>
+                  <span className="text-slate-500 text-[11px]">All Canadian provinces & territories supported</span>
+                </td>
+                <td className="p-4 bg-sky-50/70 border-x border-sky-100 font-bold text-emerald-700">
+                  <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 stroke-[3]" /> Included</span>
+                </td>
+                <td className="p-4 text-slate-600">
+                  $150 – $350 Extra per province
+                </td>
+                <td className="p-4 text-slate-600">
+                  $20 – $40 Extra per state/province
+                </td>
+              </tr>
 
-                  {/* Traditional CPA */}
-                  <td className="text-center">
-                    {row.cpa ? (
-                      <div className="w-7 h-7 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center mx-auto">
-                        <Check className="w-4 h-4" />
-                      </div>
-                    ) : (
-                      <div className="w-7 h-7 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
-                        <X className="w-4 h-4" />
-                      </div>
-                    )}
-                  </td>
+              {/* Row 2 */}
+              <tr>
+                <td className="p-4">
+                  <strong className="text-[#0c1e36] block text-sm font-heading">Federal & Provincial E-Filing</strong>
+                  <span className="text-slate-500 text-[11px]">CRA NETFILE & EFILE direct submission</span>
+                </td>
+                <td className="p-4 bg-sky-50/70 border-x border-sky-100 font-bold text-emerald-700">
+                  <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 stroke-[3]" /> Included (Unlimited)</span>
+                </td>
+                <td className="p-4 text-slate-600">
+                  Per-transmission fee billed separately
+                </td>
+                <td className="p-4 text-slate-600">
+                  Paid add-on or restricted
+                </td>
+              </tr>
 
-                  {/* DIY Software */}
-                  <td className="text-center">
-                    {row.diy ? (
-                      <div className="w-7 h-7 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center mx-auto">
-                        <Check className="w-4 h-4" />
-                      </div>
-                    ) : (
-                      <div className="w-7 h-7 rounded-full bg-red-100 text-red-500 flex items-center justify-center mx-auto">
-                        <X className="w-4 h-4" />
-                      </div>
-                    )}
-                  </td>
-                </tr>
-              ))}
+              {/* Row 3 */}
+              <tr>
+                <td className="p-4">
+                  <strong className="text-[#0c1e36] block text-sm font-heading">Per-Return Transmission Fees</strong>
+                  <span className="text-slate-500 text-[11px]">No volume caps or extra charges per return</span>
+                </td>
+                <td className="p-4 bg-sky-50/70 border-x border-sky-100 font-bold text-emerald-700">
+                  <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 stroke-[3]" /> None on Annual Plans</span>
+                </td>
+                <td className="p-4 text-slate-600">
+                  $5 – $15 per return filed
+                </td>
+                <td className="p-4 text-slate-600">
+                  $30 – $90 per return
+                </td>
+              </tr>
+
+              {/* Row 4 */}
+              <tr>
+                <td className="p-4">
+                  <strong className="text-[#0c1e36] block text-sm font-heading">MyTAXPortal Client Portal</strong>
+                  <span className="text-slate-500 text-[11px]">Secure document locker & client upload</span>
+                </td>
+                <td className="p-4 bg-sky-50/70 border-x border-sky-100 font-bold text-emerald-700">
+                  <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 stroke-[3]" /> Included</span>
+                </td>
+                <td className="p-4 text-slate-600">
+                  $250 – $500/yr Third-Party add-on
+                </td>
+                <td className="p-4 text-slate-600">
+                  <span className="flex items-center gap-1 text-red-500"><X className="w-4 h-4" /> Not Available</span>
+                </td>
+              </tr>
+
+              {/* Row 5 */}
+              <tr>
+                <td className="p-4">
+                  <strong className="text-[#0c1e36] block text-sm font-heading">Remote Digital E-Signatures</strong>
+                  <span className="text-slate-500 text-[11px]">Form T183 & client signature collection</span>
+                </td>
+                <td className="p-4 bg-sky-50/70 border-x border-sky-100 font-bold text-emerald-700">
+                  <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 stroke-[3]" /> Included</span>
+                </td>
+                <td className="p-4 text-slate-600">
+                  $2.50 – $5.00 per signature
+                </td>
+                <td className="p-4 text-slate-600">
+                  <span className="flex items-center gap-1 text-red-500"><X className="w-4 h-4" /> Not Available</span>
+                </td>
+              </tr>
+
+              {/* Row 6 */}
+              <tr>
+                <td className="p-4">
+                  <strong className="text-[#0c1e36] block text-sm font-heading">My AI Tax Assistant (OCR Slip Scanner)</strong>
+                  <span className="text-slate-500 text-[11px]">Automated T4/T5 form parsing & entry</span>
+                </td>
+                <td className="p-4 bg-sky-50/70 border-x border-sky-100 font-bold text-emerald-700">
+                  <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 stroke-[3]" /> Included Built-In</span>
+                </td>
+                <td className="p-4 text-slate-600">
+                  <span className="flex items-center gap-1 text-red-500"><X className="w-4 h-4" /> Not Available</span>
+                </td>
+                <td className="p-4 text-slate-600">
+                  <span className="flex items-center gap-1 text-red-500"><X className="w-4 h-4" /> Manual Data Entry</span>
+                </td>
+              </tr>
+
+              {/* Row 7 */}
+              <tr>
+                <td className="p-4">
+                  <strong className="text-[#0c1e36] block text-sm font-heading">Free Data Conversion & 1-on-1 Training</strong>
+                  <span className="text-slate-500 text-[11px]">Prior year data import & dedicated setup</span>
+                </td>
+                <td className="p-4 bg-sky-50/70 border-x border-sky-100 font-bold text-emerald-700">
+                  <span className="flex items-center gap-1.5"><Check className="w-4 h-4 text-emerald-600 stroke-[3]" /> Included</span>
+                </td>
+                <td className="p-4 text-slate-600">
+                  $300 – $600 Setup Fee
+                </td>
+                <td className="p-4 text-slate-600">
+                  <span className="flex items-center gap-1 text-red-500"><X className="w-4 h-4" /> None</span>
+                </td>
+              </tr>
+
+              {/* Row 8 */}
+              <tr>
+                <td className="p-4">
+                  <strong className="text-[#0c1e36] block text-sm font-heading">Additional Preparer Seats</strong>
+                  <span className="text-slate-500 text-[11px]">Extra user seats for team members</span>
+                </td>
+                <td className="p-4 bg-sky-50/70 border-x border-sky-100 font-bold text-emerald-700">
+                  $20 each (Unlimited Plan includes up to 999)
+                </td>
+                <td className="p-4 text-slate-600">
+                  $150 – $300 per additional user
+                </td>
+                <td className="p-4 text-slate-600">
+                  N/A (Single User)
+                </td>
+              </tr>
+
             </tbody>
           </table>
         </div>
 
-        {/* Bottom Guarantee Banner */}
-        <div className="mt-10 bg-gradient-to-r from-slate-900 to-[#0A1128] rounded-2xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-slate-800">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 border border-cyan-500/30">
-              <ShieldCheck className="w-7 h-7" />
-            </div>
-            <div>
-              <h4 className="text-lg font-bold font-heading text-white">100% Accuracy & Maximum Refund Guarantee</h4>
-              <p className="text-xs text-slate-300 mt-0.5">If there is ever an error on our end, we fix it immediately at zero cost. We stand by our tax work.</p>
-            </div>
+        {/* Footer Callout */}
+        <div className="bg-[#f0f4f8] border border-slate-300 p-6 rounded-xl text-center space-y-3">
+          <h4 className="text-base font-bold text-[#0c1e36]">
+            Ask any vendor you're comparing what each line above costs.
+          </h4>
+          <p className="text-xs text-slate-600 max-w-2xl mx-auto">
+            QuicTax.ca includes them, and publishes every optional extra transparently. No hidden fine print or surprise bills during tax season.
+          </p>
+          <div className="pt-2">
+            <button
+              onClick={onOpenDemo}
+              className="btn-cta-blue text-xs py-2.5 px-6 shadow-md"
+            >
+              <span>Schedule a Demo & See Complete Price List</span>
+            </button>
           </div>
-
-          <a
-            href="https://wa.me/12895275237?text=Hi%20QuicTax,%20I'd%20like%20to%20file%20my%20taxes%20with%20your%20human-assisted%20service."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-cta-whatsapp text-xs py-3 px-6 shrink-0"
-          >
-            <span>Switch to QuicTax Today</span>
-          </a>
         </div>
 
       </div>
