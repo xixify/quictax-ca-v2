@@ -1,56 +1,48 @@
 /* ==========================================================================
-   QuicTax.ca V2 — 100% Light Mode Stylesheet
-   Inspired by MyTAXPrepOffice.com & CloudTax.ca
-   ZERO Dark Sections — Clean White, Sky Blue & Slate Gray
+   QuicTax.ca — Official Light Mode Theme
+   Matching https://quictax.ca/, MyTAXPrepOffice.com, & CloudTax.ca
+   100% Light, Clean White & Sky Blue Design — Zero Dark Backgrounds
    ========================================================================== */
 
 :root {
-  /* 100% Light Theme Color Palette */
-  --bg-body: #F8FAFC;
   --bg-white: #FFFFFF;
   --bg-slate-50: #F8FAFC;
   --bg-slate-100: #F1F5F9;
   --bg-sky-tint: #F0F6FF;
   --bg-amber-tint: #FEF3C7;
+  --bg-emerald-tint: #ECFDF5;
 
-  /* Brand Colors */
   --primary-blue: #0284C7;
   --primary-blue-hover: #0369A1;
   --primary-blue-light: #E0F2FE;
   --primary-blue-border: #BAE6FD;
 
-  /* Accents */
+  --accent-green: #25D366;
+  --accent-green-hover: #1EBE5B;
   --accent-amber: #F59E0B;
-  --accent-amber-hover: #D97706;
   --accent-amber-text: #B45309;
   --accent-emerald: #10B981;
-  --accent-emerald-hover: #059669;
-  --accent-emerald-light: #D1FAE5;
   --accent-emerald-text: #047857;
-  --accent-purple: #8B5CF6;
-  --accent-purple-light: #F3E8FF;
 
-  /* Typography Colors — High Contrast Light Mode */
   --text-dark: #0F172A;       /* Headings & Title text */
   --text-body: #334155;       /* Primary body text */
   --text-muted: #64748B;      /* Labels & Subtitles */
   --text-light: #94A3B8;
 
-  /* Borders & Shadows */
   --border-light: #E2E8F0;
   --border-medium: #CBD5E1;
+
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
   --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.1);
-  --shadow-2xl: 0 20px 40px -8px rgba(15, 23, 42, 0.14);
+  --shadow-xl: 0 20px 40px -8px rgba(15, 23, 42, 0.12);
 
-  /* Fonts & Radii */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  
+  --radius-pill: 9999px;
+  --radius-card: 24px;
+  --radius-md: 12px;
 }
 
 * {
@@ -63,13 +55,14 @@ html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
   color: var(--text-body);
-  background-color: var(--bg-body);
+  background-color: #FFFFFF;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background-color: var(--bg-body);
+  background-color: #FFFFFF;
+  color: var(--text-body);
   overflow-x: hidden;
 }
 
@@ -83,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: var(--primary-blue);
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 a:hover {
@@ -97,7 +90,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   Buttons & Badges (Light Theme)
+   Pill Buttons & Badges (Matching quictax.ca)
    ========================================================================== */
 
 .btn {
@@ -106,10 +99,10 @@ a:hover {
   justify-content: center;
   gap: 0.5rem;
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 0.875rem;
-  padding: 0.8rem 1.6rem;
-  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -119,46 +112,48 @@ a:hover {
 .btn-primary-blue {
   background-color: var(--primary-blue);
   color: #FFFFFF !important;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
 }
 
 .btn-primary-blue:hover {
   background-color: var(--primary-blue-hover);
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
   transform: translateY(-1px);
 }
 
-.btn-secondary-white {
+.btn-secondary-outline {
   background-color: #FFFFFF;
   color: var(--text-dark) !important;
   border: 1.5px solid var(--border-medium);
 }
 
-.btn-secondary-white:hover {
+.btn-secondary-outline:hover {
   background-color: var(--bg-slate-50);
   border-color: var(--primary-blue);
   color: var(--primary-blue) !important;
 }
 
 .btn-whatsapp {
-  background-color: #25D366;
+  background-color: var(--accent-green);
   color: #FFFFFF !important;
   font-weight: 800;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
 }
 
 .btn-whatsapp:hover {
-  background-color: #1EBE5B;
+  background-color: var(--accent-green-hover);
+  transform: translateY(-1px);
 }
 
-.badge-chip {
+.badge-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
   background-color: var(--primary-blue-light);
   color: var(--primary-blue-hover);
   border: 1px solid var(--primary-blue-border);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-sm);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-pill);
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -172,7 +167,7 @@ a:hover {
 }
 
 .badge-emerald {
-  background-color: var(--accent-emerald-light);
+  background-color: var(--bg-emerald-tint);
   color: var(--accent-emerald-text);
   border: 1px solid #A7F3D0;
 }
@@ -187,24 +182,8 @@ a:hover {
 }
 
 /* ==========================================================================
-   Header & Top Bar (100% Light)
+   Header Navigation (Exact 7 Pages Menu: Home, Services, About, FAQ, Contact, CRA, Tax Articles)
    ========================================================================== */
-
-.top-announcement-bar {
-  background-color: var(--primary-blue-light);
-  color: var(--primary-blue-hover);
-  font-size: 0.75rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--primary-blue-border);
-}
-
-.top-bar-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
 
 .site-header {
   background-color: #FFFFFF;
@@ -225,26 +204,26 @@ a:hover {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   text-decoration: none;
 }
 
 .logo-box {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background: var(--primary-blue);
   color: #FFFFFF;
-  border-radius: var(--radius-md);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-family: var(--font-heading);
 }
 
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 900;
   color: var(--text-dark);
   font-family: var(--font-heading);
@@ -264,103 +243,46 @@ a:hover {
   border-radius: 4px;
   margin-left: 0.25rem;
   font-weight: 800;
-  text-transform: uppercase;
 }
 
+/* Simple Clean Menu Links matching quictax.ca */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.nav-item {
-  position: relative;
+  gap: 1.75rem;
 }
 
 .nav-link {
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--text-body);
-  padding: 0.5rem 0.85rem;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  cursor: pointer;
-  border: none;
-  background: transparent;
+  text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 .nav-link:hover, .nav-link.active {
   color: var(--primary-blue);
-  background-color: var(--bg-slate-50);
 }
 
-/* Dropdown Menu */
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 320px;
-  background: #FFFFFF;
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-2xl);
-  padding: 0.75rem;
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-  z-index: 1100;
-}
-
-.nav-item:hover .dropdown-menu {
-  display: flex;
-}
-
-.dropdown-item {
-  padding: 0.65rem 0.75rem;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  transition: background 0.15s ease;
-}
-
-.dropdown-item:hover {
-  background-color: var(--primary-blue-light);
-}
-
-.dropdown-title {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  display: block;
-}
-
-.dropdown-desc {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  display: block;
-}
-
-.header-ctas {
+.header-right-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 /* ==========================================================================
-   Hero Section (100% Light & Bright White)
+   Hero Section (Light & Bright White with Interactive Workspace Window)
    ========================================================================== */
 
 .hero-section {
-  background-color: #FFFFFF;
-  padding: 4rem 0 5rem;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0F6FF 100%);
+  padding: 4.5rem 0 5rem;
   border-bottom: 1px solid var(--border-light);
-  position: relative;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 3.5rem;
   align-items: center;
 }
@@ -372,20 +294,17 @@ a:hover {
 }
 
 .hero-title {
-  font-size: 2.85rem;
-  line-height: 1.15;
+  font-size: 3.25rem;
+  line-height: 1.1;
   font-weight: 900;
   color: var(--text-dark);
-}
-
-.hero-title span.highlight {
-  color: var(--primary-blue);
+  letter-spacing: -0.03em;
 }
 
 .hero-subtitle {
   font-size: 1.1rem;
   color: var(--text-body);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .hero-ctas {
@@ -395,41 +314,41 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.hero-trust-bar {
+/* Stats Bar */
+.stats-section {
+  background-color: var(--primary-blue);
+  color: #FFFFFF;
+  padding: 3rem 0;
+}
+
+.stats-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-light);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
 }
 
-.trust-card {
-  background: var(--bg-slate-50);
-  border: 1px solid var(--border-light);
-  padding: 0.85rem 1rem;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+.stat-num {
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  color: #FFFFFF;
+  line-height: 1;
+  margin-bottom: 0.35rem;
 }
 
-.trust-card-title {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--text-dark);
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.trust-card-sub {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-}
-
-/* Workspace Window Preview (Light Theme) */
+/* Workspace Window */
 .workspace-window {
   background: #FFFFFF;
   border: 1.5px solid var(--border-medium);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-2xl);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-xl);
   overflow: hidden;
 }
 
@@ -450,11 +369,7 @@ a:hover {
   gap: 0.35rem;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
 .dot-red { background: #EF4444; }
 .dot-yellow { background: #F59E0B; }
 .dot-green { background: #10B981; }
@@ -477,13 +392,9 @@ a:hover {
   background: transparent;
   color: var(--text-muted);
   cursor: pointer;
-  border-top-left-radius: var(--radius-md);
-  border-top-right-radius: var(--radius-md);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   transition: all 0.15s ease;
-}
-
-.tab-btn:hover {
-  color: var(--text-dark);
 }
 
 .tab-btn.active {
@@ -494,34 +405,34 @@ a:hover {
 
 .tab-content-body {
   padding: 1.5rem;
-  min-height: 280px;
+  min-height: 260px;
 }
 
-.ocr-result-table {
+.ocr-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   font-size: 0.75rem;
 }
 
-.ocr-result-table th, .ocr-result-table td {
+.ocr-table th, .ocr-table td {
   padding: 0.5rem 0.75rem;
   text-align: left;
   border-bottom: 1px solid var(--border-light);
 }
 
-.ocr-result-table th {
+.ocr-table th {
   background: var(--bg-slate-50);
   color: var(--text-muted);
   font-weight: 700;
 }
 
 /* ==========================================================================
-   Sections & Layouts (100% Light)
+   "What We Handle" Services Section (Matching quictax.ca)
    ========================================================================== */
 
 .section-padding {
-  padding: 5rem 0;
+  padding: 5.5rem 0;
 }
 
 .section-title-wrap {
@@ -535,7 +446,7 @@ a:hover {
 }
 
 .section-h2 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 900;
   color: var(--text-dark);
 }
@@ -545,135 +456,104 @@ a:hover {
   color: var(--text-body);
 }
 
-.pillars-grid {
+.services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
-.pillar-card {
+.service-card {
   background: #FFFFFF;
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-card);
   padding: 2.25rem;
   box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  justify-content: space-between;
 }
 
-.pillar-card:hover {
+.service-card:hover {
   border-color: var(--primary-blue-border);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl);
   transform: translateY(-3px);
 }
 
-.pillar-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-lg);
-  background: var(--primary-blue-light);
-  color: var(--primary-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 900;
+.service-card.featured-blue {
+  background: var(--primary-blue);
+  color: #FFFFFF;
+  border-color: var(--primary-blue);
 }
 
-.pillar-title {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text-dark);
+.service-card.featured-blue h3, .service-card.featured-blue p {
+  color: #FFFFFF;
 }
 
-.pillar-desc {
-  font-size: 0.9rem;
-  color: var(--text-body);
-  line-height: 1.6;
-}
+/* ==========================================================================
+   Three Steps Process
+   ========================================================================== */
 
-.pillar-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-light);
-}
-
-.pillar-list li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Industry Awards Showcase (Light Theme) */
-.awards-section {
-  background-color: var(--bg-sky-tint);
-  color: var(--text-dark);
-  padding: 5rem 0;
+.process-section {
+  background: var(--bg-slate-50);
+  padding: 5.5rem 0;
   border-bottom: 1px solid var(--border-light);
 }
 
-.award-featured-box {
-  background: #FFFFFF;
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-xl);
-  padding: 2.5rem;
-  margin-bottom: 2.5rem;
+.process-grid {
   display: grid;
-  grid-template-columns: 1fr 280px;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  align-items: center;
-  box-shadow: var(--shadow-md);
 }
 
-.award-badge-card {
-  background: var(--bg-amber-tint);
-  border: 2px solid #FDE68A;
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  text-align: center;
-}
-
-.awards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-}
-
-.award-mini-card {
+.process-card {
   background: #FFFFFF;
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  border-radius: var(--radius-card);
+  padding: 2.25rem;
   text-align: center;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Flat Pricing Plans */
+.process-num {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--primary-blue-light);
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+}
+
+/* ==========================================================================
+   Flat Pricing Plans & Cost Calculator
+   ========================================================================== */
+
 .pricing-section {
-  background: var(--bg-body);
-  padding: 5rem 0;
+  background: #FFFFFF;
+  padding: 5.5rem 0;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  align-items: stretch;
   margin-bottom: 3.5rem;
 }
 
 .pricing-card {
   background: #FFFFFF;
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-card);
   padding: 2.25rem;
   box-shadow: var(--shadow-sm);
   display: flex;
@@ -684,28 +564,13 @@ a:hover {
 }
 
 .pricing-card:hover {
-  box-shadow: var(--shadow-2xl);
+  box-shadow: var(--shadow-xl);
   transform: translateY(-4px);
 }
 
 .pricing-card.featured {
   border: 2.5px solid var(--primary-blue);
   transform: scale(1.03);
-}
-
-.featured-pill {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary-blue);
-  color: #FFFFFF;
-  font-size: 0.65rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.25rem 0.85rem;
-  border-radius: 20px;
 }
 
 .price-val {
@@ -731,28 +596,10 @@ a:hover {
   gap: 0.5rem;
 }
 
-.volume-savings-box {
-  background: var(--primary-blue-light);
-  border: 1px solid var(--primary-blue-border);
-  color: var(--text-dark);
-  border-radius: var(--radius-xl);
-  padding: 2.5rem;
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 2.5rem;
-  align-items: center;
-}
-
 /* Side-by-Side Comparison Table */
-.comparison-section {
-  background: #FFFFFF;
-  padding: 5rem 0;
-  border-bottom: 1px solid var(--border-light);
-}
-
 .comparison-table-wrap {
   border: 1px solid var(--border-medium);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-card);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   margin-bottom: 2.5rem;
@@ -778,12 +625,6 @@ a:hover {
   border-bottom: 2px solid var(--border-medium);
 }
 
-.comparison-table th.highlight {
-  background: var(--primary-blue-light);
-  color: var(--primary-blue-hover);
-  border-x: 1px solid var(--primary-blue-border);
-}
-
 .comparison-table td {
   border-bottom: 1px solid var(--border-light);
   font-size: 0.85rem;
@@ -795,58 +636,11 @@ a:hover {
   color: #0369A1;
 }
 
-/* Features Deep Dive Section */
-.features-section {
-  background: var(--bg-slate-50);
-  padding: 5rem 0;
-}
-
-.features-layout {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 2rem;
-}
-
-.feature-nav-btn {
-  width: 100%;
-  text-align: left;
-  padding: 1rem 1.25rem;
-  background: #FFFFFF;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.feature-nav-btn.active, .feature-nav-btn:hover {
-  border-color: var(--primary-blue);
-  color: var(--primary-blue);
-  box-shadow: var(--shadow-sm);
-}
-
-.feature-detail-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
-  padding: 2.5rem;
-  box-shadow: var(--shadow-md);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Interactive Canadian Tax Estimator */
+/* Interactive Tax Estimator */
 .estimator-section {
   background: var(--bg-sky-tint);
   color: var(--text-dark);
-  padding: 5rem 0;
+  padding: 5.5rem 0;
   border-bottom: 1px solid var(--border-light);
 }
 
@@ -856,10 +650,10 @@ a:hover {
   gap: 2.5rem;
 }
 
-.estimator-input-card {
+.estimator-card {
   background: #FFFFFF;
   border: 1px solid var(--border-medium);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-card);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -867,43 +661,9 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-.persona-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-}
-
-.persona-btn {
-  padding: 1rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
-  background: var(--bg-slate-50);
-  color: var(--text-dark);
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.persona-btn.active {
-  background: var(--primary-blue);
-  color: #FFFFFF;
-  border-color: var(--primary-blue);
-}
-
-.estimator-output-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-xl);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: var(--shadow-md);
-}
-
 /* Articles Grid */
 .articles-section {
-  padding: 5rem 0;
+  padding: 5.5rem 0;
   background: #FFFFFF;
 }
 
@@ -916,7 +676,7 @@ a:hover {
 .article-card {
   background: #FFFFFF;
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-card);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
@@ -944,18 +704,7 @@ a:hover {
   gap: 0.75rem;
 }
 
-.article-footer {
-  padding: 1rem 1.5rem;
-  background: var(--bg-slate-50);
-  border-top: 1px solid var(--border-light);
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--primary-blue);
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Modals (Light Theme) */
+/* Modal Window */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -976,12 +725,12 @@ a:hover {
   background: #FFFFFF;
   color: var(--text-dark);
   border: 1px solid var(--border-medium);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-card);
   width: 100%;
-  max-width: 760px;
+  max-width: 720px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: var(--shadow-2xl);
+  box-shadow: var(--shadow-xl);
 }
 
 .modal-header {
@@ -1005,36 +754,36 @@ a:hover {
   cursor: pointer;
 }
 
-/* Multi-Column Footer (100% Light Theme) */
+/* Clean Footer matching quictax.ca */
 .site-footer {
   background: #FFFFFF;
   color: var(--text-body);
   padding: 4rem 0 2.5rem;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   border-top: 1px solid var(--border-medium);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr repeat(4, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 3rem;
   margin-bottom: 3rem;
 }
 
 .footer-col-title {
   color: var(--text-dark);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .footer-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 .footer-links a {
@@ -1052,20 +801,17 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
-/* Responsive Media Queries */
+/* Responsive Styles */
 @media (max-width: 1024px) {
-  .hero-grid, .pillars-grid, .estimator-grid, .volume-savings-box, .award-featured-box {
+  .hero-grid, .estimator-grid, .services-grid {
     grid-template-columns: 1fr;
   }
-  .pricing-grid, .articles-grid, .awards-grid {
+  .pricing-grid, .articles-grid, .process-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .features-layout {
-    grid-template-columns: 1fr;
   }
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1073,10 +819,28 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .pricing-grid, .articles-grid, .awards-grid, .persona-grid {
+  .pricing-grid, .articles-grid, .process-grid, .stats-grid {
     grid-template-columns: 1fr;
   }
-  .main-nav { display: none; }
+  .mobile-toggle {
+    display: block !important;
+  }
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    border-bottom: 1px solid var(--border-medium);
+    gap: 1rem;
+  }
+  .main-nav.mobile-open {
+    display: flex !important;
+  }
   .footer-grid { grid-template-columns: 1fr; }
-  .hero-title { font-size: 2.15rem; }
+  .hero-title { font-size: 2.35rem; }
 }
