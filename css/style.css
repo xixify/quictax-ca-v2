@@ -1,0 +1,891 @@
+/* ==========================================================================
+   QUICTAX.CA - CANADIAN CORPORATE LIGHT THEME (HIGH CONTRAST & READABLE)
+   ========================================================================== */
+
+:root {
+  --bg-dark-navy: #0C1B33;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F8FAFC;
+  --bg-surface-blue: #F0F6FF;
+  --bg-surface-grey: #F1F5F9;
+  
+  --primary-blue: #0284C7;
+  --primary-blue-hover: #0369A1;
+  --primary-blue-light: #E0F2FE;
+  
+  --accent-navy: #0C1B33;
+  --accent-royal: #1D4ED8;
+  --accent-red: #C8102E; /* Canadian Maple Red Accent */
+
+  --text-dark: #0C1B33;    /* High contrast dark navy for headings */
+  --text-body: #334155;    /* High contrast dark slate for body text */
+  --text-muted: #475569;   /* Readable dark slate for secondary labels */
+  --text-white: #FFFFFF;
+  
+  --border-light: #E2E8F0;
+  --border-subtle: #CBD5E1;
+  
+  --shadow-sm: 0 1px 3px rgba(12, 27, 51, 0.08);
+  --shadow-md: 0 4px 12px rgba(12, 27, 51, 0.1);
+  --shadow-lg: 0 12px 24px -4px rgba(12, 27, 51, 0.14);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--text-body);
+  background-color: var(--bg-surface-subtle);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header & Top Bar (High Contrast Light Theme) */
+.header-top-bar {
+  background-color: #F1F5F9;
+  color: #334155;
+  font-size: 0.775rem;
+  font-weight: 600;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.header-top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.top-bar-left, .top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+  padding: 0.85rem 0;
+  box-shadow: 0 2px 6px rgba(12, 27, 51, 0.05);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0C1B33;
+  letter-spacing: -0.02em;
+}
+
+.logo-text span {
+  color: #0284C7;
+}
+
+.logo-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #0369A1;
+  background: #E0F2FE;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #BAE6FD;
+  margin-left: 2px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #F8FAFC;
+  padding: 0.3rem;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+}
+
+.nav-link {
+  padding: 0.45rem 0.95rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  transition: all 0.15s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #FFFFFF;
+  background-color: #0284C7;
+}
+
+.header-ctas {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mobile-toggle {
+  display: none;
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  color: #0C1B33;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Button System (High Contrast, Professional Corporate Blue) */
+.btn {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #0284C7;
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: #0369A1;
+}
+
+/* Replaced green WhatsApp button with Royal Ocean Blue Corporate CTA */
+.btn-whatsapp, .btn-blue {
+  background-color: #0284C7;
+  color: #FFFFFF;
+}
+
+.btn-whatsapp:hover, .btn-blue:hover {
+  background-color: #0369A1;
+}
+
+.btn-navy {
+  background-color: #0C1B33;
+  color: #FFFFFF;
+}
+
+.btn-navy:hover {
+  background-color: #1E293B;
+}
+
+.btn-outline-white, .btn-outline {
+  background-color: #FFFFFF;
+  color: #0C1B33;
+  border: 1.5px solid #CBD5E1;
+}
+
+.btn-outline-white:hover, .btn-outline:hover {
+  background-color: #F8FAFC;
+  border-color: #0284C7;
+  color: #0284C7;
+}
+
+.btn-secondary {
+  background-color: #E0F2FE;
+  color: #0369A1;
+  border: 1px solid #BAE6FD;
+}
+
+.btn-secondary:hover {
+  background-color: #BAE6FD;
+  color: #0284C7;
+}
+
+/* Hero Section (Light Corporate Theme) */
+.hero-section {
+  background-color: #FFFFFF;
+  color: var(--text-dark);
+  padding: 4.5rem 0 5rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #E0F2FE;
+  border: 1px solid #BAE6FD;
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #0369A1;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hero-title {
+  font-size: 3.25rem;
+  font-weight: 900;
+  color: #0C1B33;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.hero-title .highlight-text {
+  color: #0284C7;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #334155;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  max-width: 92%;
+}
+
+.hero-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+}
+
+.chip-card {
+  background-color: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  padding: 0.6rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0C1B33;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Hero Visual Card (High Contrast Light Theme) */
+.hero-visual-card {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.pro-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 2px solid #0284C7;
+}
+
+.hero-card-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.feature-item {
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 0.75rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* Replaced green pulse with royal blue pulse */
+.pulse-blue {
+  width: 8px;
+  height: 8px;
+  background-color: #0284C7;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.3);
+}
+
+/* Page Banner Headers */
+.page-banner-section {
+  background-color: #F8FAFC;
+  border-bottom: 1px solid #E2E8F0;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+/* Stats Bar */
+.stats-bar {
+  background-color: white;
+  border-bottom: 1px solid var(--border-light);
+  padding: 2.5rem 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.stat-box {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-light);
+  padding: 1.25rem 1rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.85rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  color: #0C1B33;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #334155;
+  margin-top: 0.2rem;
+}
+
+.stat-subtext {
+  font-size: 0.7rem;
+  color: #475569;
+}
+
+/* Sections & De-cluttered Padding */
+.section {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section-title-wrap {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-badge {
+  display: inline-block;
+  background-color: #E0F2FE;
+  color: #0369A1;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.section-h2 {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #0C1B33;
+  margin-bottom: 0.65rem;
+}
+
+.section-p {
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* Tax Estimator Calculator Widget */
+.calc-section {
+  background-color: #F8FAFC;
+  color: var(--text-dark);
+}
+
+.calc-section .section-badge {
+  background-color: #E0F2FE;
+  color: #0369A1;
+}
+
+.calc-section .section-h2 {
+  color: #0C1B33;
+}
+
+.calc-section .section-p {
+  color: #334155;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.calc-card-input, .calc-card-output {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.persona-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.persona-btn {
+  background-color: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  padding: 0.85rem;
+  border-radius: 4px;
+  color: #0C1B33;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.persona-btn.active, .persona-btn:hover {
+  background-color: #0284C7;
+  border-color: #0284C7;
+  color: white;
+}
+
+/* Services Cards Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #BAE6FD;
+}
+
+.service-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service-card-content {
+  padding: 1.75rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Comparison Table (Light Theme) */
+.comparison-table-wrapper {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  min-width: 650px;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  color: #0C1B33;
+}
+
+.comparison-table th {
+  background-color: #F1F5F9;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: #0C1B33;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.comparison-table th.highlight-col {
+  background-color: #0284C7;
+  color: white;
+  text-align: center;
+}
+
+.comparison-table tr:nth-child(even) td { background-color: #F8FAFC; }
+.comparison-table tr:nth-child(odd) td { background-color: #FFFFFF; }
+
+.comparison-table td.highlight-cell {
+  background-color: #F0F6FF;
+  border-left: 2px solid var(--primary-blue);
+  border-right: 2px solid var(--primary-blue);
+  text-align: center;
+}
+
+/* Process Section */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.process-card {
+  background-color: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.process-card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.process-card-body {
+  padding: 1.5rem;
+}
+
+.process-step-num {
+  font-size: 1.75rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  color: #0284C7;
+  margin-bottom: 0.5rem;
+}
+
+/* Accordion FAQ */
+.faq-item {
+  background: white;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.faq-item-header {
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-item-header h3 {
+  font-size: 1.05rem;
+  color: #0C1B33;
+}
+
+.faq-item-body {
+  display: none;
+  padding: 0 1.25rem 1.25rem;
+  font-size: 0.9rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.faq-item.open .faq-item-body {
+  display: block;
+}
+
+/* Blog Articles Grid */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.article-card {
+  background-color: white;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #BAE6FD;
+}
+
+.article-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.article-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.article-footer {
+  padding: 1rem 1.5rem;
+  background-color: #F8FAFC;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Floating Action Button (Royal Blue Corporate CTA) */
+.floating-wa-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  background-color: #0284C7;
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(12, 27, 51, 0.2);
+}
+
+.floating-wa-btn:hover {
+  background-color: #0369A1;
+}
+
+/* Standardized Light Footer Across All Pages */
+.site-footer {
+  background-color: #F8FAFC;
+  color: #334155;
+  padding: 4rem 0 2rem;
+  border-top: 1px solid #CBD5E1;
+  font-size: 0.85rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 5fr 4fr 3fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.footer-grid h4 {
+  color: #0C1B33 !important;
+  font-weight: 800;
+}
+
+.footer-grid a {
+  color: #334155;
+  font-weight: 600;
+}
+
+.footer-grid a:hover {
+  color: #0284C7;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+/* Single Article Typography */
+.single-article-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #334155;
+  font-size: 1.05rem;
+}
+
+.single-article-content h2 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #0C1B33;
+  border-bottom: 2px solid #E2E8F0;
+  padding-bottom: 0.5rem;
+}
+
+.single-article-content h3 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #0C1B33;
+}
+
+.single-article-content p {
+  margin-bottom: 1.25rem;
+}
+
+.single-article-content ul, .single-article-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.single-article-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .calc-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .articles-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .main-nav { display: none; }
+  .mobile-toggle { display: block; }
+  .hero-title { font-size: 2.4rem; }
+  .hero-chips-grid { grid-template-columns: repeat(2, 1fr); }
+  .articles-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .section-h2 { font-size: 1.85rem; }
+}
